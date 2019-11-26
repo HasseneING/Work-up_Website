@@ -4,13 +4,26 @@ include "../config.php";
 class userC
 {
 
-    function findUser($user)
+    function findEmail($user)
     { 
         $email=$user->getEmail();
         $sql = "SELECT * FROM users where email=$email";
         $db= config::getConnection();
         try{
             $liste=$db->query($sql);
+            }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+            }
+    }
+
+    function findPassword($email)
+    { 
+
+        $sql = "SELECT password FROM users where email=$email";
+        $db= config::getConnection();
+        try{
+            $enc_password=$db->query($sql);
             }
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
@@ -32,7 +45,7 @@ class userC
         
  
 
-        $sql = "INSERT into users (name,email,password) 
+        $sql = "INSERT into users (Full_name,email,password) 
                 values (:name,:email,:password) ";
 
         $db = config::getConnection();
@@ -44,10 +57,11 @@ class userC
         $name=$user->getName();
         $email=$user->getEmail();
         $password=$user->getPassword();
+        $enc_password=password_hash($password,PASSWORD_DEFAULT);
     
         $req->bindValue(':name',$name);
         $req->bindValue(':email',$email);
-        $req->bindValue(':password',$password);
+        $req->bindValue(':password',$enc_password);
 
         
         $req->execute();
