@@ -36,6 +36,7 @@
 
 
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!--For Plugins external css-->
     <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -170,7 +171,15 @@
         </section>
         <!--End off Home Sections-->
 
+        <script>
+            function on() {
+                document.getElementById("overlay").style.display = "block";
+            }
 
+            function off() {
+                document.getElementById("overlay").style.display = "none";
+            }
+        </script>
 
         <!--About Section-->
         <section id="about" class="about bg-yellow roomy-80">
@@ -182,7 +191,7 @@
                             <h2 class="text-white">- & -</h2>
                             <h3 class="text-blue text-uppercase">Book your study session! and get to work!</h3>
 
-                            <a onclick="on()" class="btn btn-primary m-top-100">Book Now!</a>
+                            <a onclick="on();" class="btn btn-primary m-top-100">Book Now!</a>
                         </div>
                     </div>
                 </div>
@@ -196,29 +205,56 @@
                 <form id="fourma" action="booking.php" method="POST">
                     <label class="text-white">Pick a time:</label>
                     <br>
-                    <input id="datetime" placeholder="Click here!" class="text-blue" type="text" name="date">
+                    <input id="datetime" autocomplete="off" placeholder="Click here!" class="text-blue" type="text" name="date">
                     <script>
                         $("#datetime").datetimepicker();
                     </script>
+                    <br>
+                    <label class="text-white">Number of seats:</label>
+                    <br>
+                    <select class="text-blue" type="number" id="seats" name="seats">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                    </select>
+                    <br>
 
+                    <label class="text-white">Phone Number:</label>
+                    <br>
+                    <input placeholder="optional" class="text-blue" id="phone" name="phone">
+                    <br>
+                    <label class="text-white">Additional Notes:</label>
+                    <br>
+                    <input autocomplete="off" placeholder="Requests?" class="text-blue" type="text" name="notes">
+                    <br>
+                    <br>
 
-                    <button onclick="off()" type="submit" class="text-blue">Submit</button>
-                    <button onclick="off()" type="reset" class="text-blue">Cancel</button>
+                    <button id="Btn-A" onclick="validation()" type="button" class="text-blue">Go!</button>
+                    <button onclick="off()" type="button" class="text-blue">Cancel</button>
                 </form>
-
             </div>
-
-            <script>
-                function on() {
-                    document.getElementById("overlay").style.display = "block";
-                }
-
-                function off() {
-                    document.getElementById("overlay").style.display = "none";
-                }
-            </script>
         </section>
 
+        <script type="text/javascript">
+            function validation() {
+                var time = document.getElementById('datetime').value;
+                var phone = document.getElementById('phone').value;
+                if (time.length == 0) {
+                    swal("Time Field Empty!", "Pick a time!", "error", {
+                        buttons: false,
+                        timer: 1729
+                    });
+                } else if ((phone.length > 8) || (phone.length < 8) && (phone.length != 0)) {
+                    swal("Check your phone number!", "Wrong number!", "error", {
+                        buttons: false,
+                        timer: 1729
+                    });
+                } else document.getElementById('fourma').submit();
+            }
+        </script>
 
 
         <!--Featured Section-->
