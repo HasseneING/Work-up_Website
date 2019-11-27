@@ -100,8 +100,8 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="analytics.html">
-                                <span class="nav-text">Analytics</span>
+                              <a class="sidenav-item-link" href="ajouterservice.html">
+                                <span class="nav-text">Ajouter Service</span>
                                 
                                 <span class="badge badge-success">new</span>
                                 
