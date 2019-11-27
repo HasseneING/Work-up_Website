@@ -20,6 +20,25 @@ class reservationC
             }
     }
 
+
+    function modifierStatus($id_reservation,$status)
+    {
+        $sql="UPDATE reservation set status=:status where id_reservation=$id_reservation";
+        $db = config::getConnection();
+        try{
+        $req=$db->prepare($sql);
+        
+        $req->bindvalue(':status',$status);
+        $req->execute();
+            
+           // header('Location: index.php');
+        }
+        catch (Exception $e){
+            echo " Erreur ! ".$e->getMessage();
+
+        }
+    }
+
     function addReservation($reservation)
     {
         

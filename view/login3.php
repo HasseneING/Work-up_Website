@@ -7,7 +7,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
-<body style="background:white;">
+<body style="background:black;">
     
 </body>
 </html>

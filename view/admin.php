@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Table - Sleek Admin Dashboard Template</title>
+  <title>Welcome Admin!</title>
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet"/>
   <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet" />
@@ -17,6 +17,7 @@
   <link href="assetsAdmin/plugins/ladda/ladda.min.css" rel="stylesheet" />
   <link href="assetsAdmin/plugins/select2/css/select2.min.css" rel="stylesheet" />
   <link href="assetsAdmin/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- SLEEK CSS -->
   <link id="sleek-css" rel="stylesheet" href="assetsAdmin/css/sleek.css" />
@@ -299,7 +300,10 @@
                         </li>
                         
 
-                        
+                        <script>swal("Welcome!", "Welcome admin!!", "success", {
+        buttons: false,
+        timer: 1729
+    }); </script>
                         
                         <li  class="has-sub" >
                           <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#widgets"
@@ -797,17 +801,18 @@
                         ?>
                          <tr>
                           <tr>
-                            <td ><?PHP echo $row['id_reservation']; ?></td>
+                            <td align="center"><?PHP echo $row['id_reservation']; ?></td>
                             <td >
-                              <a class="text-dark" href=""> <?PHP echo $row['date_reservation']; ?></a>
+                              <a class="text-dark" href=""align="center"> <?PHP echo $row['date_reservation']; ?></a>
                             </td>
-                            <td class="d-none d-md-table-cell"><?PHP echo $row['seats']; ?></td>
+                            <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['seats']; ?></td>
 							<td class="d-none d-md-table-cell"><?PHP echo $row['phone']; ?></td>
 							<td class="d-none d-md-table-cell"><?PHP echo $row['notes']; ?></td>
 							<td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>
                             
-                            <form method="POST" action="modifier.php">
-                            <td><input type="submit" value="Accepter" /></td>
+                            <form method="POST" action="modifierStatus.php">
+							<td><button type="submit" name="accepter" value="accepter" class="mb-1 btn btn-pill btn-success">Accepter</button></td>
+							<td><button type="submit" name="refuser" value="refuser" class="mb-1 btn btn-pill btn-danger">Refuser</button></td>
                             <input type="hidden" value="<?php echo $row['id_reservation'];?>" name="id_reservation">
                             </form>
                           </tr>
