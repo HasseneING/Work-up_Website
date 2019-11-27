@@ -8,7 +8,7 @@
 
 <head>
 
-    <meta charset="utf-8" http-equiv="Refresh" content="3;url=login.html">
+    <meta charset="utf-8" http-equiv="Refresh" content="3;url=login.php">
     <title>Work'Up</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">

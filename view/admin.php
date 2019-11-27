@@ -100,11 +100,48 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="ajouterservice.html">
-                                <span class="nav-text">Ajouter Service</span>
+                              <a class="sidenav-item-link" href="analytics.html">
+                                <span class="nav-text">Analytics</span>
                                 
                                 <span class="badge badge-success">new</span>
                                 
+                              </a>
+                            </li>
+                          
+                        
+
+                        
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li  class="has-sub" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Services"
+                      aria-expanded="false" aria-controls="Services">
+                      <i class="mdi mdi-view-Services-outline"></i>
+                      <span class="nav-text">Services manegment</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse"  id="Services"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                        
+                        
+                          
+                            <li >
+                              <a class="sidenav-item-link" href="services/add.php">
+                                <span class="nav-text">Add services</span>
+                              </a>
+                            </li>
+                                      
+                            <li >
+                              <a class="sidenav-item-link" href="services/modify.php">
+                                <span class="nav-text">Modify services</span>
+                              </a>
+                            </li>
+
+                            <li >
+                              <a class="sidenav-item-link" href="services/delete.php">
+                                <span class="nav-text">Delete services</span>
                               </a>
                             </li>
                           

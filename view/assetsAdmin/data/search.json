@@ -1,6 +1,27 @@
   [
   
-    
+
+      {
+        "label": "Add services",
+        "link": "",
+        "tags": "ecommerce, charts, todos, maps, tabs, tables",
+        "location": "Services"
+      },
+
+      {
+        "label": "Modify services",
+        "link": "",
+        "tags": "ecommerce, charts, todos, maps, tabs, tables",
+        "location": "Services"
+      },
+
+      {
+        "label": "Delete survices",
+        "link": "",
+        "tags": "",
+        "location": "Services"
+      },
+
       
       {
         "label": "Ecommerce",
@@ -19,11 +40,6 @@
       },
       
     
-
-  
-    
-      
-      
       {
         "label": "Alert",
         "link": "alert.html",

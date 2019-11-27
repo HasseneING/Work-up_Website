@@ -41,9 +41,6 @@ class reservationC
 
     function addReservation($reservation)
     {
-        
- 
-
         $sql = "INSERT into reservation (date_reservation,seats,phone,notes) 
                 values (:date_reservation,:seats,:phone,:notes) ";
 
