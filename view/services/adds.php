@@ -11,7 +11,7 @@ $service1C=new serviceC();
 
 $service1C->addservice($service1);
 
-header('Location:adds.php');
+header('Location:add.php');
 }
 else echo("Verifier les Champs! ");
 ?>

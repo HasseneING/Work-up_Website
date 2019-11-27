@@ -17,7 +17,6 @@ class serviceC
             }
     }
 
-<<<<<<< HEAD
     function afficherServices()
     {
         $sql="SELECT * from Services";
@@ -31,8 +30,7 @@ class serviceC
             }
     }
 
-=======
->>>>>>> master
+
 
     function serviceExists($service) {
         $id=$service->getid();
@@ -47,13 +45,11 @@ class serviceC
     function addservice($service)
     {
 
-<<<<<<< HEAD
         $sql = "INSERT into services (id,name) 
                 values (:id,:name) ";
-=======
+
         $sql = "INSERT into services (id,password) 
                 values (,:id,:password) ";
->>>>>>> master
 
         $db = config::getConnection();
 
@@ -61,15 +57,13 @@ class serviceC
 
         $req=$db->prepare($sql);
 
-<<<<<<< HEAD
         $name=$service->getname();
     
         $req->bindValue(':name',$name);
-=======
+
         $id=$service->getid();
     
         $req->bindValue(':id',$id);
->>>>>>> master
 
         
         $req->execute();
