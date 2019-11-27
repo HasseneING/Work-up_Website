@@ -11,7 +11,7 @@ $user1= new user($_POST['name'],$_POST['email'],$_POST['password']);
 
 
 $user1C= new userC();
-$user1C->findUser($user1);
+$user1C->findEmail($user1);
 
 if(!$user1C->emailExists($user1->getEmail()))
 {

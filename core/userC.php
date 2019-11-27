@@ -16,11 +16,22 @@ class userC
             die('Erreur: '.$e->getMessage());
             }
     }
-
+    function findRole($email)
+    {
+        $sql = "SELECT Account_Type FROM users where email='$email'";
+        $db= config::getConnection();
+        try{
+            $role=$db->query($sql);
+            }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+            }
+            return $role->fetchColumn();
+    }
     function findPassword($email)
     { 
 
-        $sql = "SELECT password FROM users where email=$email";
+        $sql = "SELECT password FROM users where email='$email'";
         $db= config::getConnection();
         try{
             $enc_password=$db->query($sql);
@@ -28,6 +39,7 @@ class userC
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
             }
+            return $enc_password->fetchColumn();
     }
 
 

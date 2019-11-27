@@ -6,19 +6,19 @@ include "../config.php";
 class reservationC
 {
 
-    function findReservation($user)
-    { 
-        $email=$user->getEmail();
-        $sql = "SELECT * FROM reservation where =$email";
+
+    function afficherReservation()
+    {
+        $sql="SELECT * from reservation";
         $db= config::getConnection();
         try{
             $liste=$db->query($sql);
+            return $liste;
             }
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
             }
     }
-
 
     function addReservation($reservation)
     {
