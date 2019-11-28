@@ -37,6 +37,20 @@ if(isset($_POST['refuser']))
         }); </script>');
         header( "refresh:3;url=admin.php" );  
       }
+      else if(isset($_POST['delete']))
+{
+
+
+
+    $reservation1C->supprimerReservation($_POST['id_reservation']);
+    
+
+    echo('<script>swal("Deleted!", "Reservation deleted avec success!", "error", {
+        buttons: false,
+        timer: 2900
+    }); </script>');
+    header( "refresh:3;url=admin.php" );  
+  }
     else {
 
 

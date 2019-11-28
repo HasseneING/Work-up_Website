@@ -823,7 +823,7 @@
                         <thead>
                           <tr>
                           <th>ID_user</th>
-                            <th>id_Reservation</th>
+                        <!--    <th>id_Reservation</th> -->
                             <th class="d-none d-md-table-cell">date Reservation</th>
 							<th>places</th>
                             <th>Numero Telephone</th>
@@ -840,18 +840,20 @@
                          <tr>
                           <tr>
                           <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['ID_user']; ?></td>
-                            <td align="center"><?PHP echo $row['id_reservation']; ?></td>
+                      <!--      <td align="center"><?PHP// echo $row['id_reservation']; ?></td>-->
                             <td >
                               <a class="text-dark" href=""align="center"> <?PHP echo $row['date_reservation']; ?></a>
                             </td>
                             <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['seats']; ?></td>
                             <td class="d-none d-md-table-cell"><?PHP echo $row['phone']; ?></td>
                             <td class="d-none d-md-table-cell"><a>Afficher</a></td>
-                            <td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>
+                            <td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>              
                             <form method="POST" action="modifierStatus.php">
 							<td><button type="submit" name="accepter" value="accepter" class="mb-1 btn btn-pill btn-success">Accepter</button></td>
-							<td><button type="submit" name="refuser" value="refuser" class="mb-1 btn btn-pill btn-danger">Refuser</button></td>
+              <td><button type="submit" name="refuser" value="refuser" class="mb-1 btn btn-pill btn-danger">Refuser</button></td>
+              <td><button type="submit" name="delete" value="delete" class="mb-1 btn btn-outline-danger">Delete</button></td>
                             <input type="hidden" value="<?php echo $row['id_reservation'];?>" name="id_reservation">
+
                             </form>
                           </tr>
                           <?php }} ?>

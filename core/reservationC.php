@@ -38,6 +38,23 @@ class reservationC
 
         }
     }
+function supprimerReservation($id_reservation)
+{
+    $sql="DELETE FROM reservation where id_reservation=:id_reservation";
+    
+    $db = config::getConnection();
+    try{
+        $req=$db->prepare($sql);
+        $req->bindValue(':id_reservation',$id_reservation);
+        $req->execute();
+    }
+    catch (Exception $e){
+        echo " Erreur ! ".$e->getMessage();
+    }
+}
+
+
+
 
     function addReservation($reservation)
     {
