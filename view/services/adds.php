@@ -29,7 +29,7 @@ if(!$service1C->Exists($_POST['name'])){
 }
     else
  {
-    echo('<script>swal("Error!", "Wrong Email or password! Try again.", "error", {
+    echo('<script>swal("Error!", "Service exists !!! try agin", "error", {
         buttons: false,
         timer: 1729
     }); </script>');

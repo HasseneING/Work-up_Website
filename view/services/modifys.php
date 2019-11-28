@@ -115,19 +115,19 @@
 
 
                                     <li>
-                                        <a class="sidenav-item-link" href="services/add.php">
+                                        <a class="sidenav-item-link" href="add.php">
                                             <span class="nav-text">Add services</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a class="sidenav-item-link" href="services/modify.php">
+                                        <a class="sidenav-item-link" href="modify.php">
                                             <span class="nav-text">Modify services</span>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a class="sidenav-item-link" href="services/delete.php">
+                                        <a class="sidenav-item-link" href="delete.php">
                                             <span class="nav-text">Delete services</span>
                                         </a>
                                     </li>
@@ -744,7 +744,7 @@
             <div class="content-wrapper">
                 <div class="content">
                     <div class="breadcrumb-wrapper">
-                        <h1>Table of services</h1>
+                        <h1>Table of services for modification</h1>
 
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb p-0">
@@ -756,7 +756,7 @@
                                 <li class="breadcrumb-item">
                                     components
                                 </li>
-                                <li class="breadcrumb-item" aria-current="page">table</li>
+                                <li class="breadcrumb-item" aria-current="page">modify</li>
                             </ol>
                         </nav>
 
@@ -764,56 +764,48 @@
 
 
                     <!-- Recent Order Table -->
-                    
 
-                    
 
-                        <?PHP
-                        include "../../entities/service.php";
-                        include "../../core/serviceC.php";
 
-                        if (isset($_POST['name'])) 
-                        {
-                            $service1C = new serviceC();
-                            $service1 = new service($_POST['name']);
-                            $service1 = $service1C->getservice($_POST['name']);
 
-                            $name = $_POST['name'];
-                            $id = 3;
-                                    ?>
+                    <?PHP
+                    include "../../entities/service.php";
+                    include "../../core/serviceC.php";
 
-                                    <form method="POST">
-                                        <table border="1">
-                                            <caption>Modify service</caption>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td><input type="text" name="name" value="<?PHP echo $name ?>" disabled></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Service ID</td>
-                                                <td><input type="text" name="id" value="<?PHP echo $id ?>"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="submit" name="modify2" value="Modify"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="hidden" name="name" value="<?PHP echo $row['name']; ?>"></td>
-                                            </tr>
-                                        </table>
-                                    </form>
-                        }
+                    if (isset($_POST['name']) && isset($_POST['id'])) {
+                        
+                        $name = $_POST['name'];
+                        $id = $_POST['id'];
+                        
+                        ?>
 
-        <?PHP
-        if (isset($_POST['modify2'])) 
-        {
-            $service = new service($_POST['name']);
-            $service1C = new serviceC();
-            $service1C->modify($service, $_POST['cin']);
-            echo $_POST['name'];
-            header('location:modify.php');
-        }
-        ?>
+                        <form method="POST">
+                            <table border="0" class="table card-table table-responsive table-responsive-large" style="width:100%">
+                                <tr>
+                                    <td>Name</td>
+                                    <td><input type="text" name="change" value="<?PHP echo $name ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td>Service ID</td>
+                                    <td><input type="text"value="<?PHP echo $id ?>" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td><button name="modify2"  class="mb-1 btn btn-pill btn-danger">Modify</button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="hidden" name="name" value="<?PHP echo $name; ?>"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    <?PHP  } ?>
 
+                    <?php
+                    if (isset($_POST['modify2'])) {
+                        $service1C = new serviceC();
+                        $service1C->modify($_POST['name'],$_POST['change']);
+                        header( "refresh:1.7;url=modifys.php" );
+                    }
+                    ?>
 
                 </div>
             </div>
@@ -826,7 +818,7 @@
 
 
 
-    
+
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>

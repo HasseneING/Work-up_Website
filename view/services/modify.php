@@ -800,6 +800,7 @@
                         <form method="POST" action="modifys.php">
                           <td><button type="submit" name="modify" value="modify" class="mb-1 btn btn-pill btn-danger">Modify</button></td>
                           <input type="hidden" value="<?php echo $row['name']; ?>" name="name">
+                          <input type="hidden" value="<?php echo $row['id']; ?>" name="id">
                         </form>
                       </tr>
                   <?php }
