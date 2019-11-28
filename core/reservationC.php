@@ -41,8 +41,8 @@ class reservationC
 
     function addReservation($reservation)
     {
-        $sql = "INSERT into reservation (date_reservation,seats,phone,notes) 
-                values (:date_reservation,:seats,:phone,:notes) ";
+        $sql = "INSERT into reservation (date_reservation,seats,phone,notes,ID_user) 
+                values (:date_reservation,:seats,:phone,:notes,:ID_user) ";
 
         $db = config::getConnection();
 
@@ -54,11 +54,14 @@ class reservationC
         $seats=$reservation->getSeats();
         $phone=$reservation->getPhone();
         $notes=$reservation->getNotes();
+        $user_ID=$reservation->getUserId();
+
     
         $req->bindValue(':date_reservation',$date_reservation);
         $req->bindValue(':seats',$seats);
         $req->bindValue(':phone',$phone);
         $req->bindValue(':notes',$notes);
+        $req->bindValue(':ID_user',$user_ID);
         
         
         $req->execute();

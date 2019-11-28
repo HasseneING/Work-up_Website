@@ -1,11 +1,11 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome Admin!</title>
+  <title>Welcome <?php if(isset($_SESSION['name']))echo $_SESSION['name'];?>!</title>
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet"/>
   <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet" />
@@ -742,14 +742,14 @@
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                       <img src="assetsAdmin/img/user/user.png" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                      <span class="d-none d-lg-inline-block"><?php if(isset($_SESSION['name']))echo $_SESSION['name'];?></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
                       <li class="dropdown-header">
                         <img src="assetsAdmin/img/user/user.png" class="img-circle" alt="User Image" />
                         <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">abdus@gmail.com</small>
+                        <?php if(isset($_SESSION['name']))echo $_SESSION['name'];?><small class="pt-1"><?php if(isset($_SESSION['email']))echo $_SESSION['email'];?></small>
                         </div>
                       </li>
 
@@ -771,7 +771,7 @@
                       </li>
 
                       <li class="dropdown-footer">
-                        <a href="signin.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="logout.php"> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>
@@ -822,6 +822,7 @@
                       <table class="table card-table table-responsive table-responsive-large" style="width:100%">
                         <thead>
                           <tr>
+                          <th>ID_user</th>
                             <th>id_Reservation</th>
                             <th class="d-none d-md-table-cell">date Reservation</th>
 							<th>places</th>
@@ -838,15 +839,15 @@
                         ?>
                          <tr>
                           <tr>
+                          <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['ID_user']; ?></td>
                             <td align="center"><?PHP echo $row['id_reservation']; ?></td>
                             <td >
                               <a class="text-dark" href=""align="center"> <?PHP echo $row['date_reservation']; ?></a>
                             </td>
                             <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['seats']; ?></td>
-							<td class="d-none d-md-table-cell"><?PHP echo $row['phone']; ?></td>
-							<td class="d-none d-md-table-cell"><?PHP echo $row['notes']; ?></td>
-							<td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>
-                            
+                            <td class="d-none d-md-table-cell"><?PHP echo $row['phone']; ?></td>
+                            <td class="d-none d-md-table-cell"><a>Afficher</a></td>
+                            <td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>
                             <form method="POST" action="modifierStatus.php">
 							<td><button type="submit" name="accepter" value="accepter" class="mb-1 btn btn-pill btn-success">Accepter</button></td>
 							<td><button type="submit" name="refuser" value="refuser" class="mb-1 btn btn-pill btn-danger">Refuser</button></td>

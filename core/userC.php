@@ -28,6 +28,30 @@ class userC
             }
             return $role->fetchColumn();
     }
+    function findName($email)
+    {
+        $sql = "SELECT Full_name FROM users where email='$email'";
+        $db= config::getConnection();
+        try{
+            $name=$db->query($sql);
+            }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+            }
+            return $name->fetchColumn();
+    }
+    function findID($email)
+    {
+        $sql = "SELECT Account_ID FROM users where email='$email'";
+        $db= config::getConnection();
+        try{
+            $name=$db->query($sql);
+            }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+            }
+            return $name->fetchColumn();
+    }
     function findPassword($email)
     { 
 

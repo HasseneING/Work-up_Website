@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -123,7 +125,7 @@
                         <li><a href="#portfolio">Visit</a></li>
                         <li><a href="#test">Testimonial</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="account.php">Account</a></li>
+                        <li><a href="logout.php">Log Out</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -231,7 +233,6 @@
                     <input autocomplete="off" placeholder="Requests?" class="text-blue" type="text" name="notes">
                     <br>
                     <br>
-
                     <button id="Btn-A" onclick="validation()" type="button" class="text-blue">Go!</button>
                     <button onclick="off()" type="button" class="text-blue">Cancel</button>
                 </form>

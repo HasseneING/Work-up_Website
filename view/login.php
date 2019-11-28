@@ -11,6 +11,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <link rel="stylesheet" href="login.css">
     <script src="Login.js"></script>
@@ -40,12 +41,12 @@
                     <div class="tab-content">
                         <div id="sectionA" class="tab-pane fade in active">
                             <div class="innter-form">
-                                <form class="sa-innate-form" method="post" action="login3.php">
+                                <form class="sa-innate-form" method="post" id="form1" action="login3.php">
                                     <label style="color: aliceblue;">Email Address</label>
                                     <input type="text" name="email">
                                     <label style="color: aliceblue;">Password</label>
                                     <input type="password" name="password">
-                                    <button type="submit">Sign In</button>
+                                    <button type="button" onclick="tlog();">Sign In</button>
                                     <a href="">Forgot Password?</a>
                                 </form>
                             </div>
@@ -53,14 +54,14 @@
                         </div>
                         <div id="sectionB" class="tab-pane fade">
                             <div class="innter-form">
-                                <form class="sa-innate-form" method="post" action="signup.php">
+                                <form class="sa-innate-form" method="post" id="form2" action="signup.php">
                                     <label style="color: aliceblue;">Name</label>
                                     <input type="text" name="name">
                                     <label style="color: aliceblue;">Email Address</label>
                                     <input type="text" name="email">
                                     <label style="color: aliceblue;">Password</label>
                                     <input type="password" name="password">
-                                    <button type="submit">Join now</button>
+                                    <button type="button" onclick="tsign();" >Join now</button>
                                     <p style="color: aliceblue;">By clicking Join now, you agree to Workup's User Agreement, Privacy Policy, and Cookie Policy.</p>
                                 </form>
                             </div>
@@ -71,6 +72,68 @@
             </div>
         </div>
     </div>
+
+<script>
+function tlog() {
+    var m = document.forms[0].email.value;
+    var p = document.forms[0].password.value;
+    var form = document.getElementById('form1');
+    var t1 = (m == "" && p == "") || (m == "") || (p == "");
+    var c = m.lastIndexOf('.');
+    if (t1) {
+        swal("Error!", "Remplissez Les Champs SVP!", "error", {
+            buttons: false,
+            timer: 1729
+        });
+    } else {
+        if ((m.indexOf("@") != -1) && (c > m.indexOf("@"))) {
+            form.submit();
+        } else
+            swal("Error!", "Email Invalid!", "error", {
+                buttons: false,
+                timer: 1729
+            });
+    }
+}
+
+function tsign() {
+    var m = document.forms[1].email.value;
+    var p = document.forms[1].password.value;
+    var n = document.forms[1].name.value;
+    var form = document.getElementById('form2');
+    var c = m.lastIndexOf('.');
+
+    var t1 = (m == "" && p == "") || (m == "") || (p == "") || (n == "");
+    if (t1) {
+        swal("Error!", "Remplissez Les Champs SVP!", "error", {
+            buttons: false,
+            timer: 1729
+        });    } else {
+        if ((m.indexOf("@") != -1) && (c > m.indexOf("@"))) {
+            form.submit();
+
+        } else
+        swal("Error!", "Email Invalid!", "error", {
+                buttons: false,
+                timer: 1729
+            });    }
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
