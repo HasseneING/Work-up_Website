@@ -1,43 +1,64 @@
 <?php
-include __DIR__."/../config.php";
+include __DIR__ . "/../config.php";
 
 class serviceC
 {
 
-    function findservice($service)
-    { 
-        $id=$service->getid();
-        $sql = "SELECT * FROM services where id=$id";
-        $db= config::getConnection();
-        try{
-            $liste=$db->query($sql);
-            }
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-            }
+    function findservice($name)
+    {
+        $sql = "SELECT * FROM services where name=$name";
+        $db = config::getConnection();
+        try {
+            $liste = $db->query($sql);
+        } catch (Exception $e) {
+            die('Erreur: ' . $e->getMessage());
+        }
+    }
+
+    function getservice($name)
+    {
+        $sql = "SELECT 1 FROM services where name=$name";
+        $db = config::getConnection();
+        try {
+            $liste = $db->query($sql);
+            return $liste;
+        } catch (Exception $e) {
+            die('Erreur: ' . $e->getMessage());
+        }
     }
 
     function afficherServices()
     {
-        $sql="SELECT * from Services";
-        $db= config::getConnection();
-        try{
-            $liste=$db->query($sql);
+        $sql = "SELECT * from Services";
+        $db = config::getConnection();
+        try {
+            $liste = $db->query($sql);
             return $liste;
-            }
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-            }
+        } catch (Exception $e) {
+            die('Erreur: ' . $e->getMessage());
+        }
     }
 
 
-
-    function serviceExists($service) {
-        $id=$service->getid();
-        $pdo= config::getConnection();
-        $stmt = $pdo->prepare("SELECT 1 FROM services WHERE id=?");
-        $stmt->execute([$id]); 
+    function Exists($name)
+    {
+        $pdo = config::getConnection();
+        $stmt = $pdo->prepare("SELECT 1 FROM services WHERE name=?");
+        $stmt->execute([$name]);
         return $stmt->fetchColumn();
+    }
+
+    function delete($name)
+    {
+        $sql = "DELETE FROM services where name=:name";
+        $db = config::getConnection();
+        try {
+            $req = $db->prepare($sql);
+            $req->bindValue(':name', $name);
+            $req->execute();
+        } catch (Exception $e) {
+            echo " Erreur ! " . $e->getMessage();
+        }
     }
 
 
@@ -45,35 +66,46 @@ class serviceC
     function addservice($service)
     {
 
-        $sql = "INSERT into services (id,name) 
-                values (:id,:name) ";
-
-        $sql = "INSERT into services (id,password) 
-                values (,:id,:password) ";
+        $sql = "INSERT into services (name) 
+                values (:name)";
 
         $db = config::getConnection();
 
-        try{
+        try {
 
-        $req=$db->prepare($sql);
+            $req = $db->prepare($sql);
 
-        $name=$service->getname();
-    
-        $req->bindValue(':name',$name);
+            $name = $service->getname();
 
-        $id=$service->getid();
-    
-        $req->bindValue(':id',$id);
+            $req->bindValue(':name', $name);
 
-        
-        $req->execute();
-    
 
-        }catch(Exception $e){
-            die('Erreur: '. $e->getMessage());
+            $req->execute();
+        } catch (Exception $e) {
+            die('Erreur: ' . $e->getMessage());
         }
     }
 
 
+    function modify($service)
+    {
+        $sql = "UPDATE services SET name=:name WHERE name=:name";
 
+        $db = config::getConnection();
+        try {
+
+            $req = $db->prepare($sql);
+
+            $name = $service->getname();
+
+
+            $req->bindValue(':name', $name);
+
+            $req->execute();
+
+            $s = $req->execute();
+        } catch (Exception $e) {
+            echo " Erreur ! " . $e->getMessage();
+        }
+    }
 }

@@ -13,16 +13,12 @@ function __construct($name)
     $this->name=$name;
 }
 
-
 function getname(){
     return $this->name;
 }
 
-
-function setname($name){
+function setName($name){
     $this->name=$name;
-}
-
-}
+}}
 
 ?>

@@ -128,19 +128,19 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="services/add.php">
+                              <a class="sidenav-item-link" href="add.php">
                                 <span class="nav-text">Add services</span>
                               </a>
                             </li>
                                       
                             <li >
-                              <a class="sidenav-item-link" href="services/modify.php">
+                              <a class="sidenav-item-link" href="modify.php">
                                 <span class="nav-text">Modify services</span>
                               </a>
                             </li>
 
                             <li >
-                              <a class="sidenav-item-link" href="services/delete.php">
+                              <a class="sidenav-item-link" href="delete.php">
                                 <span class="nav-text">Delete services</span>
                               </a>
                             </li>
@@ -811,14 +811,15 @@
                     </div>
                         <div class="card-body pt-0 pb-5">
                     <form method="POST" action="adds.php">
-        <table border="1">
+        <table border="0">
             <tr>
-                <td>Name</td>
-                <td><input type="text" name="name"></td>
+                <td align="center">Name of the new Service </td>
+                <td></td>
+                <td align="center" ><input type="text" name="name"></td>
             </tr>
             <tr>
-                <td></td>
-                <td><input type="submit" name="add" value="Add"></td>
+              <td></td>
+                <td align="right"><button class="mb-1 btn btn-pill btn-success">Add service</button></td>
             </tr>
         </table>
                     </form>
@@ -833,24 +834,7 @@
 
         </div>
 
-                  <footer class="footer mt-auto">
-            <div class="copyright bg-white">
-              <p>
-                &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
-                <a
-                  class="text-primary"
-                  href="http://www.iamabdus.com/"
-                  target="_blank"
-                  >Abdus</a
-                >.
-              </p>
-            </div>
-            <script>
-                var d = new Date();
-                var year = d.getFullYear();
-                document.getElementById("copy-year").innerHTML = year;
-            </script>
-          </footer>
+                  
 
       </div>
     </div>
