@@ -54,7 +54,23 @@ function supprimerReservation($id_reservation)
 }
 
 
+function afficherReservationID($ID_user)
+{
 
+    $sql="SELECT * from reservation where ID_user=$ID_user";
+    $db= config::getConnection();
+    try{
+        $liste=$db->query($sql);
+        return $liste;
+        }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+        }
+
+
+
+
+}
 
     function addReservation($reservation)
     {
