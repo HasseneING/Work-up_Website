@@ -105,7 +105,24 @@ function afficherReservationID($ID_user)
         }
     }
 
+function findEmail($ID_user){
 
+    $sql="SELECT email from users where Account_ID=$ID_user";
+    $db= config::getConnection();
+    try{
+        $liste=$db->query($sql);
+        return $liste->fetchColumn();
+        }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+        }
+
+
+
+
+
+
+}
 
 }
 

@@ -28,6 +28,7 @@ if(password_verify($password,$enc_password))
         $_SESSION['email']=$email;
         $_SESSION['name']=$name;
         $_SESSION['id']=$Id_user;
+        $_SESSION['role']=$role;
         header( "Location:loggedin.php" );
     }
     else
@@ -35,6 +36,7 @@ if(password_verify($password,$enc_password))
         $_SESSION['id']=$Id_user;
         $_SESSION['email']=$email;
         $_SESSION['name']=$name;
+        $_SESSION['role']=$role;
         header("location:admin.php");
     }
 }
