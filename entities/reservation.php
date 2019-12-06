@@ -9,16 +9,19 @@ private $date;
 private $seats;
 private $phone;
 private $notes;
+private $user_ID;
 
 
 
-function __construct($date,$seats,$phone,$notes)
+function __construct($date,$seats,$phone,$notes,$user_ID)
 {
     $this->date=$date;
     $this->seats=$seats;
     $this->phone=$phone;
     $this->notes=$notes;
+    $this->user_ID=$user_ID;
 }
+
 function getDate(){
     return $this->date;
 }
@@ -33,7 +36,11 @@ function getPhone(){
 
 function getNotes(){
 
-    return $this->phone;
+    return $this->notes;
+}
+function getUserID(){
+
+    return $this->user_ID;
 }
 
 
@@ -49,6 +56,10 @@ function setPhone($phone){
 function setNotes($notes){
     $this->notes=$notes;
 }
+function setUserID($user_ID){
+    $this->user_ID=$user_ID;
+}
+
 }
 
 

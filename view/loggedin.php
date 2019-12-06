@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -123,7 +125,7 @@
                         <li><a href="#portfolio">Visit</a></li>
                         <li><a href="#test">Testimonial</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="account.php">Account</a></li>
+                        <li><a href="logout.php">Log Out</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -179,6 +181,13 @@
             function off() {
                 document.getElementById("overlay").style.display = "none";
             }
+            function on2() {
+                document.getElementById("overlay2").style.display = "block";
+            }
+
+            function off2() {
+                document.getElementById("overlay2").style.display = "none";
+            }
         </script>
 
         <!--About Section-->
@@ -192,11 +201,64 @@
                             <h3 class="text-blue text-uppercase">Book your study session! and get to work!</h3>
 
                             <a onclick="on();" class="btn btn-primary m-top-100">Book Now!</a>
+                            <a onclick="on2();" class="btn btn-primary m-top-100">See Bookings!</a>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+<section id="vbook">
+<div id="overlay2" onclick="off2();">
+
+<?php
+                        include "../core/reservationC.php";
+                        $reservation1C = new reservationC();
+						$listeReservations=$reservation1C->afficherReservationID($_SESSION['id']);
+						
+                 ?>
+                  <div style="background:white; padding-top:50px;" class="card card-table-border-none" id="promotion">
+                    <div class="card-header justify-content-between">
+                      <h2 style="padding-top:50px;margin-left: 344px;" >Reservations</h2>
+                      <div class="date-range-report ">
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 pb-5">
+                      <table class="table card-table table-responsive table-responsive-large" style="width:50%;margin-left: 344px;">
+                        <thead>
+                          <tr>
+                            <th class="d-none d-md-table-cell">date Reservation</th>
+							<th>places</th>
+                            <th>Numero Telephone</th>
+							<th>Notes</th>
+							<th>Status</th>
+							
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        if(is_array($listeReservations) || is_object($listeReservations)){
+                        foreach ($listeReservations as $row) {
+                        ?>
+                         <tr>
+                          <tr>
+                            <td ><a class="text-dark" href=""><?PHP echo $row['date_reservation']; ?></a>                            </td>
+                            <td class="d-none d-md-table-cell"><?PHP echo $row['seats']; ?></td>
+                            <td class="d-none d-md-table-cell"><?PHP echo $row['phone']; ?></td>
+                            <td class="d-none d-md-table-cell"><a>Afficher</a></td>
+                            <td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>              
+                          </tr>
+                          <?php }} ?>
+                    
+                          
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+</div>
+</section>
 
 
 
@@ -231,7 +293,6 @@
                     <input autocomplete="off" placeholder="Requests?" class="text-blue" type="text" name="notes">
                     <br>
                     <br>
-
                     <button id="Btn-A" onclick="validation()" type="button" class="text-blue">Go!</button>
                     <button onclick="off()" type="button" class="text-blue">Cancel</button>
                 </form>

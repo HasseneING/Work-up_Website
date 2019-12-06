@@ -66,202 +66,126 @@
 
 
 
-            <li class="has-sub">
-              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
-                <i class="mdi mdi-view-dashboard-outline"></i>
-                <span class="nav-text">Dashboard</span> <b class="caret"></b>
-              </a>
-              <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
-                <div class="sub-menu">
+          <li  class="has-sub" >
+      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
+        aria-expanded="false" aria-controls="dashboard">
+        <i class="mdi mdi-view-dashboard-outline"></i>
+        <span class="nav-text">Dashboard</span> <b class="caret"></b>
+      </a>
+      <ul  class="collapse"  id="dashboard"
+        data-parent="#sidebar-menu">
+        <div class="sub-menu">
+              <li >
+                <a class="sidenav-item-link" href="../admin.php">
+                  <span class="nav-text">Accueil</span>
+                  
+                </a>
+              </li>
+        </div>
+      </ul>
+    </li>
 
-
-
-                  <li>
-                    <a class="sidenav-item-link" href="index.html">
-                      <span class="nav-text">Ecommerce</span>
-
+                  <li  class="has-sub active" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Services"
+                      aria-expanded="false" aria-controls="Services">
+                      <i class="mdi mdi-page-next-outline"></i>
+                      <span class="nav-text">Gerer Services</span> <b class="caret"></b>
                     </a>
-                  </li>
+                    <ul  class="collapse"  id="Services"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">                        
+                            <li >
+                              <a class="sidenav-item-link" href="add.php">
+                                <span class="nav-text">Ajouter services</span>
+                              </a>
+                            </li>
+                                      
+                            <li >
+                              <a class="sidenav-item-link" href="modify.php">
+                                <span class="nav-text">Modifier services</span>
+                              </a>
+                            </li>
 
-
-
-
-
-
-                  <li>
-                    <a class="sidenav-item-link" href="analytics.html">
-                      <span class="nav-text">Analytics</span>
-
-                      <span class="badge badge-success">new</span>
-
-                    </a>
-                  </li>
-
-
-
-
-                </div>
-              </ul>
-            </li>
-
-            <li class="has-sub">
-              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Services" aria-expanded="false" aria-controls="Services">
-                <i class="mdi mdi-view-Services-outline"></i>
-                <span class="nav-text">Services manegment</span> <b class="caret"></b>
-              </a>
-              <ul class="collapse" id="Services" data-parent="#sidebar-menu">
-                <div class="sub-menu">
-
-
-
-                  <li>
-                    <a class="sidenav-item-link" href="add.php">
-                      <span class="nav-text">Add services</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class="sidenav-item-link" href="modify.php">
-                      <span class="nav-text">Modify services</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class="sidenav-item-link" href="delete.php">
-                      <span class="nav-text">Delete services</span>
-                    </a>
-                  </li>
-
-
-
-
-                </div>
-              </ul>
-            </li>
-
-            <li class="has-sub active expand">
-              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements" aria-expanded="false" aria-controls="ui-elements">
-                <i class="mdi mdi-folder-multiple-outline"></i>
-                <span class="nav-text">UI Elements</span> <b class="caret"></b>
-              </a>
-              <ul class="collapse show" id="ui-elements" data-parent="#sidebar-menu">
-                <div class="sub-menu">
-
-
-                  <li class="has-sub active expand">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#components" aria-expanded="false" aria-controls="components">
-                      <span class="nav-text">Components</span> <b class="caret"></b>
-                    </a>
-                    <ul class="collapse show" id="components">
-                      <div class="sub-menu">
-
-                        <li>
-                          <a href="alert.html">Alert</a>
-                        </li>
-
-                        <li>
-                          <a href="badge.html">Badge</a>
-                        </li>
-
-                        <li>
-                          <a href="breadcrumb.html">Breadcrumb</a>
-                        </li>
-
-                        <li>
-                          <a href="button-default.html">Button Default</a>
-                        </li>
-
-                        <li>
-                          <a href="button-dropdown.html">Button Dropdown</a>
-                        </li>
-
-                        <li>
-                          <a href="button-group.html">Button Group</a>
-                        </li>
-
-                        <li>
-                          <a href="button-social.html">Button Social</a>
-                        </li>
-
-                        <li>
-                          <a href="button-loading.html">Button Loading</a>
-                        </li>
-
-                        <li>
-                          <a href="card.html">Card</a>
-                        </li>
-
-                        <li>
-                          <a href="carousel.html">Carousel</a>
-                        </li>
-
-                        <li>
-                          <a href="collapse.html">Collapse</a>
-                        </li>
-
-                        <li>
-                          <a href="list-group.html">List Group</a>
-                        </li>
-
-                        <li>
-                          <a href="modal.html">Modal</a>
-                        </li>
-
-                        <li>
-                          <a href="pagination.html">Pagination</a>
-                        </li>
-
-                        <li>
-                          <a href="popover-tooltip.html">Popover & Tooltip</a>
-                        </li>
-
-                        <li>
-                          <a href="progress-bar.html">Progress Bar</a>
-                        </li>
-
-                        <li>
-                          <a href="spinner.html">Spinner</a>
-                        </li>
-
-                        <li>
-                          <a href="switcher.html">Switcher</a>
-                        </li>
-
-                        <li class="active">
-                          <a href="table.html">Table</a>
-                        </li>
-
-                        <li>
-                          <a href="tab.html">Tab</a>
-                        </li>
-
+                            <li >
+                              <a class="sidenav-item-link" href="delete.php">
+                                <span class="nav-text">Supprimer services</span>
+                              </a>
+                            </li>
                       </div>
+                    </ul>
+                  </li>
+
+                  <li  class="has-sub" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Reserva"
+                      aria-expanded="false" aria-controls="Services">
+                      <i class="mdi mdi-book-open-outline"></i>
+                      <span class="nav-text">Gerer Reservations</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse"  id="Reserva"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">                        
+                            <li >
+                              <a class="sidenav-item-link" href="../Reservation.php">
+                                <span class="nav-text">Afficher Reservations</span>
+                              </a>
+                            </li>
+                       </div>
                     </ul>
                   </li>
 
 
 
-
-                  <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
-                      <span class="nav-text">Icons</span> <b class="caret"></b>
+              
+                  <li  class="has-sub " >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
+                      aria-expanded="false" aria-controls="ui-elements">
+                      <i class="mdi mdi-folder-multiple-outline"></i>
+                      <span class="nav-text">UI Elements</span> <b class="caret"></b>
                     </a>
-                    <ul class="collapse" id="icons">
+                    <ul  class="collapse"  id="ui-elements"
+                      data-parent="#sidebar-menu">
                       <div class="sub-menu">
-
-                        <li>
-                          <a href="material-icon.html">Material Icon</a>
+                        
+                        
+                        <li  class="has-sub" >
+                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#components"
+                            aria-expanded="false" aria-controls="components">
+                            <span class="nav-text">Components</span> <b class="caret"></b>
+                          </a>
+                          <ul  class="collapse"  id="components">
+                            <div class="sub-menu">
+                              
+                              <li >
+                                <a href="alert.html">Alert</a>
+                              </li>
+                             
+                              
+                            </div>
+                          </ul>
                         </li>
+                        
 
-                        <li>
-                          <a href="flag-icon.html">Flag Icon</a>
+                        
+                        <li  class="has-sub" >
+                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
+                            aria-expanded="false" aria-controls="icons">
+                            <span class="nav-text">Icons</span> <b class="caret"></b>
+                          </a>
+                          <ul  class="collapse"  id="icons">
+                            <div class="sub-menu">
+                              
+                              <li >
+                                <a href="material-icon.html">Material Icon</a>
+                              </li>
+                              
+                              <li >
+                                <a href="flag-icon.html">Flag Icon</a>
+                              </li>
+                              
+                            </div>
+                          </ul>
                         </li>
-
-                      </div>
-                    </ul>
-                  </li>
-
-
+                        
 
 
                   <li class="has-sub">
@@ -601,24 +525,6 @@
 
         </div>
 
-        <hr class="separator" />
-
-        <div class="sidebar-footer">
-          <div class="sidebar-footer-content">
-            <h6 class="text-uppercase">
-              Cpu Uses <span class="float-right">40%</span>
-            </h6>
-            <div class="progress progress-xs">
-              <div class="progress-bar active" style="width: 40%;" role="progressbar"></div>
-            </div>
-            <h6 class="text-uppercase">
-              Memory Uses <span class="float-right">65%</span>
-            </h6>
-            <div class="progress progress-xs">
-              <div class="progress-bar progress-bar-warning" style="width: 65%;" role="progressbar"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </aside>
 
