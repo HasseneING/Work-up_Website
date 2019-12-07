@@ -90,7 +90,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                     <a class="navbar-brand" href="#brand">
-                        <img src="assets/images/logo.png" class="logo" alt="">
+                        <img src="assets/images/logo.png" class="logo" alt="" height="50" width="150">
                         <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                     </a>
                 </div>

@@ -6,17 +6,6 @@ class serviceC
 
     function findservice($name)
     {
-        $sql = "SELECT * FROM services where name=$name";
-        $db = config::getConnection();
-        try {
-            $liste = $db->query($sql);
-        } catch (Exception $e) {
-            die('Erreur: ' . $e->getMessage());
-        }
-    }
-
-    function getservice($name)
-    {
         $sql = "SELECT 1 FROM services where name=$name";
         $db = config::getConnection();
         try {
@@ -87,19 +76,16 @@ class serviceC
     }
 
 
-    function modify($service)
+    function modify($name,$update)
     {
-        $sql = "UPDATE services SET name=:name WHERE name=:name";
+        $sql = "UPDATE services SET name=:name WHERE name='$name'";
 
         $db = config::getConnection();
         try {
 
             $req = $db->prepare($sql);
 
-            $name = $service->getname();
-
-
-            $req->bindValue(':name', $name);
+            $req->bindValue(':name',$update);
 
             $req->execute();
 

@@ -705,9 +705,11 @@
 
                         <form method="POST" action="modifys.php">
                           <td><button type="submit" name="modify" value="modify" class="mb-1 btn btn-pill btn-danger">Modify</button></td>
-                          <input type="hidden" value="<?php echo $row['name']; ?>" name="name">
+                          <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
+                          <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                         </form>
                       </tr>
+                      <tr></tr>
                   <?php }
                   } ?>
 

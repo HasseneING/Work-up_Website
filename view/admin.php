@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start();
+
+
+
+if($_SESSION['role']!='admin')
+  header('location: loggedin.php');
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

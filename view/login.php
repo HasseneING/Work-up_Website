@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <br>
-            <a href="index.html"><img src="assets/images/logo.png"></a>
+            <a href="index.html"><img src="assets/images/logo.png" height="50" width="150"></a>
             <h2>Welcome To Work'up Fellas!</h2>
 
         </div>
