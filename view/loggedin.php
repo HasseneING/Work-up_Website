@@ -109,7 +109,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                     <a class="navbar-brand" href="#brand">
-                        <img src="assets/images/logo.png" class="logo" alt="">
+                        <img src="assets/images/logo.png" class="logo" alt="" height="50" width="150">
                         <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                     </a>
 
@@ -380,6 +380,35 @@
 
 
         <!--Business Section-->
+        <?php
+          include "../core/serviceC.php";
+
+          $service1C = new serviceC();
+          $list = $service1C->afficherservices();
+
+          ?>
+        <section id="service" class="service bg-grey roomy-70">
+            <div class="container">
+                <div class="row">
+                    <?php if (is_array($list) || is_object($list)) {
+                                    foreach ($list as $row) { ?>
+                    <div class="main_service">
+                        <div class="col-md-6">
+                            <div class="service_slid">
+                                <div class="slid_shap bg-yellow"></div>         
+                                    <div class="service_slid_item text-center">
+                                    
+                                    <div class="service_slid_text">
+                                                                  
+        
+                                        <!--<span class="icon icon icon-tools text-black"></span>-->
+                                        <img src="assets/fonts/svg/wifi.png" class="svg"></img>
+                                        <h5 class="text-black m-top-20"><?PHP echo $row['name']; ?></h5>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div> <?php } } ?>
         <section id="service" class="service bg-grey roomy-70">
             <div class="container">
                 <div class="row">

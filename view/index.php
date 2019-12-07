@@ -96,7 +96,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                     <a class="navbar-brand" href="#brand">
-                        <img src="assets/images/logo.png" class="logo" alt="">
+                        <img src="assets/images/logo.png" class="logo" alt="" height="50" width="150">
                         <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                     </a>
 
@@ -242,40 +242,41 @@
 
 
         <!--Business Section-->
+        <?php
+          include "../core/serviceC.php";
+
+          $service1C = new serviceC();
+          $list = $service1C->afficherservices();
+
+          ?>
         <section id="service" class="service bg-grey roomy-70">
             <div class="container">
                 <div class="row">
-                    <div class="main_service">
-                        <div class="col-md-6">
-                            <div class="service_slid">
-                                <div class="slid_shap bg-yellow"></div>
-                                <div class="service_slid_item text-center">
-                                    <div class="service_slid_text">
-                                        <!--<span class="icon icon icon-tools text-black"></span>-->
-                                        <img src="assets/fonts/svg/wifi.png" class="svg"></img>
-                                        <h5 class="text-black m-top-20">Free wifi </h5>
+                    
+                                <div class="main_service">
+                                    <div class="col-md-6">
+                                        <div class="service_slid">
+                                            <div class="slid_shap bg-yellow"></div>         
+                                                <div class="service_slid_item text-center">
+                                                <?php 
+                        if (is_array($list) || is_object($list)) {
+                            foreach ($list as $row) { ?>
+                                                    <div class="service_slid_text">
+                                                                                
+                        
+                                                        <!--<span class="icon icon icon-tools text-black"></span>-->
+                                                        <img src="assets/fonts/svg/wifi.png" class="svg"></img>
+                                                        <h5 class="text-black m-top-20"><?PHP echo $row['name']; ?></h5>
+                                                    </div>
+                                                    <?php } 
+                    } 
+                    ?>
+                                                </div>
+                                        </div>
                                     </div>
-                                    <div class="service_slid_text">
-                                        <img src="assets/fonts/svg/coffee.png" class="svg"></img>
-                                        <!--<span class="icon icon icon-sports-2 text-black"></span>-->
-                                        <h5 class="text-black m-top-20">Coffee </h5>
+                                </div> 
+                        
 
-                                    </div>
-                                    <div class="service_slid_text">
-                                        <img src="assets/fonts/svg/meeting.png" class="svg"></img>
-                                        <!--<span class="icon icon icon-sports-2 text-black"></span>-->
-                                        <h5 class="text-black m-top-20">Meeting room </h5>
-
-                                    </div>
-                                    <div class="service_slid_text">
-                                        <img src="assets/fonts/svg/service.png" class="svg"></img>
-                                        <!--<span class="icon icon icon-sports-2 text-black"></span>-->
-                                        <h5 class="text-black m-top-20">Bring your lunch</h5>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-5 col-md-offset-1">
                             <div class="service_item sm-m-top-50">
                                 <div class="head_title">

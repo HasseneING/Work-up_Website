@@ -78,7 +78,7 @@ class serviceC
 
     function modify($name,$update)
     {
-        $sql = "UPDATE services SET name=:name WHERE name=$name";
+        $sql = "UPDATE services SET name=:name WHERE name='$name'";
 
         $db = config::getConnection();
         try {
