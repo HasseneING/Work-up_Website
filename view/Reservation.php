@@ -24,6 +24,27 @@ if($_SESSION['role']!='admin')
   <link href="assetsAdmin/plugins/select2/css/select2.min.css" rel="stylesheet" />
   <link href="assetsAdmin/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
+  <script src="assetsAdmin/plugins/jquery/jquery.min.js"></script>
+  <script src="assetsAdmin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assetsAdmin/plugins/toaster/toastr.min.js"></script>
+  <script src="assetsAdmin/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
+  <script src="assetsAdmin/plugins/charts/Chart.min.js"></script>
+  <script src="assetsAdmin/plugins/ladda/spin.min.js"></script>
+  <script src="assetsAdmin/plugins/ladda/ladda.min.js"></script>
+  <script src="assetsAdmin/plugins/jquery-mask-input/jquery.mask.min.js"></script>
+  <script src="assetsAdmin/plugins/select2/js/select2.min.js"></script>
+  <script src="assetsAdmin/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="assetsAdmin/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
+  <script src="assetsAdmin/plugins/daterangepicker/moment.min.js"></script>
+  <script src="assetsAdmin/plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="assetsAdmin/plugins/jekyll-search.min.js"></script>
+  <script src="assetsAdmin/js/sleek.js"></script>
+  <script src="assetsAdmin/js/chart.js"></script>
+  <script src="assetsAdmin/js/date-range.js"></script>
+  <script src="assetsAdmin/js/map.js"></script>
+  <script src="assetsAdmin/js/custom.js"></script>
 
   <!-- SLEEK CSS -->
   <link id="sleek-css" rel="stylesheet" href="assetsAdmin/css/sleek.css" />
@@ -704,6 +725,42 @@ if($_SESSION['role']!='admin')
 						$listeReservations=$reservation1C->afficherReservation();
 						
                  ?>
+                 <style>
+                 .my-custom-scrollbar {
+                    position: relative;
+                    height: 500px;
+                    overflow: auto;
+                    }
+                    .table-wrapper-scroll-y {
+                    display: block;
+                    }
+
+
+                    table.dataTable thead .sorting:after,
+                    table.dataTable thead .sorting:before,
+                    table.dataTable thead .sorting_asc:after,
+                    table.dataTable thead .sorting_asc:before,
+                    table.dataTable thead .sorting_asc_disabled:after,
+                    table.dataTable thead .sorting_asc_disabled:before,
+                    table.dataTable thead .sorting_desc:after,
+                    table.dataTable thead .sorting_desc:before,
+                    table.dataTable thead .sorting_desc_disabled:after,
+                    table.dataTable thead .sorting_desc_disabled:before {
+                      bottom: .5em;
+                    }
+
+                  </style>
+                  <script>
+                  
+                  $(document).ready(function () {
+                  $('#Search').DataTable({
+                    "pagingType": "simple" // "simple" option for 'Previous' and 'Next' buttons only
+                   });
+                  $('.dataTables_length').addClass('bs-select');
+                  });
+                                                  
+                  </script>
+
                   <div class="card card-table-border-none" id="promotion">
                     <div class="card-header justify-content-between">
                       <h2>Reservation</h2>
@@ -711,30 +768,30 @@ if($_SESSION['role']!='admin')
                         <span></span>
                       </div>
                     </div>
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
                     <div class="card-body pt-0 pb-5">
-                      <table class="table card-table table-responsive table-responsive-large" style="width:100%">
+                      <table id="Search"  class="table card-table table-responsive table-responsive-large table-hover table-sm" style="width:100%">
                         <thead>
                           <tr>
-                          <th>ID_user</th>
-                        <!--    <th>id_Reservation</th> -->
-                            <th class="d-none d-md-table-cell">date Reservation</th>
-							<th>places</th>
-                            <th>Numero Telephone</th>
-							<th>Notes</th>
-							<th>Status</th>
-							
-                          </tr>
+                              <th class="th-sm">ID_user</th>
+                              <th class="th-sm">date Reservation</th>
+                              <th class="th-sm">places</th>
+                              <th class="th-sm">Numero Telephone</th>
+                              <th class="th-sm">Notes</th>
+                              <th class="th-sm">Status</th>
+                          </tr>                      
                         </thead>
                         <tbody>
+
                         <?php
                         if(is_array($listeReservations) || is_object($listeReservations)){
                         foreach ($listeReservations as $row) {
                         ?>
                          <tr>
                           <tr>
-                          <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['ID_user']; ?></td>
-                      <!--      <td align="center"><?PHP// echo $row['id_reservation']; ?></td>-->
-                            <td >
+                          <td class="d-none d-md-table-cell " align="center"><?PHP echo $row['ID_user']; ?></td>
+                            <td>
                               <a class="text-dark" href=""align="center"> <?PHP echo $row['date_reservation']; ?></a>
                             </td>
                             <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['seats']; ?></td>
@@ -758,26 +815,16 @@ if($_SESSION['role']!='admin')
                       </table>
                     </div>
                   </div>
-</div>
+                </div>
 							</div>						
-</div>
-
-          
-
-
+          </div>
         </div>
+      </div>
+
 
                   <footer class="footer mt-auto">
             <div class="copyright bg-white">
-              <p>
-                &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
-                <a
-                  class="text-primary"
-                  href="http://www.iamabdus.com/"
-                  target="_blank"
-                  >Abdus</a
-                >.
-              </p>
+              
             </div>
             <script>
                 var d = new Date();
@@ -789,27 +836,7 @@ if($_SESSION['role']!='admin')
       </div>
     </div>
 
-    
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
-<script src="assetsAdmin/plugins/jquery/jquery.min.js"></script>
-<script src="assetsAdmin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assetsAdmin/plugins/toaster/toastr.min.js"></script>
-<script src="assetsAdmin/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
-<script src="assetsAdmin/plugins/charts/Chart.min.js"></script>
-<script src="assetsAdmin/plugins/ladda/spin.min.js"></script>
-<script src="assetsAdmin/plugins/ladda/ladda.min.js"></script>
-<script src="assetsAdmin/plugins/jquery-mask-input/jquery.mask.min.js"></script>
-<script src="assetsAdmin/plugins/select2/js/select2.min.js"></script>
-<script src="assetsAdmin/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
-<script src="assetsAdmin/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
-<script src="assetsAdmin/plugins/daterangepicker/moment.min.js"></script>
-<script src="assetsAdmin/plugins/daterangepicker/daterangepicker.js"></script>
-<script src="assetsAdmin/plugins/jekyll-search.min.js"></script>
-<script src="assetsAdmin/js/sleek.js"></script>
-<script src="assetsAdmin/js/chart.js"></script>
-<script src="assetsAdmin/js/date-range.js"></script>
-<script src="assetsAdmin/js/map.js"></script>
-<script src="assetsAdmin/js/custom.js"></script>
+
 
 
 

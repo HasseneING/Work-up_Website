@@ -47,7 +47,7 @@
                                     <label style="color: aliceblue;">Password</label>
                                     <input type="password" name="password">
                                     <button type="button" onclick="tlog();">Sign In</button>
-                                    <a href="">Forgot Password?</a>
+                                    <a href="recovery/recuperer.php">Forgot Password?</a>
                                 </form>
                             </div>
                             <div class="clearfix"></div>
