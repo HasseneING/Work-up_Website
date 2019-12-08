@@ -40,7 +40,7 @@
                                 <form class="sa-innate-form" method="POST" action="rec.php">
                                     <label style="color: aliceblue;">Email Address</label>
                                     <input type="text" name="email" placeholder="Email address">
-                                    <button type="button">Recover</button>
+                                    <button type="submit">Recover</button>
                                 </form>
                             </div>
                             <div class="clearfix"></div>

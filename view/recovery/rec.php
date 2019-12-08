@@ -20,7 +20,7 @@ $user1C = new userC();
 
     if (!empty($_POST['email'])) {
         if ($user1C->emailExists($_POST['email'])) {
-            echo ('<script>swal("OUPS !", "mmmm !", "error", {
+            echo ('<script>swal("Done!", "An email to recover your password has been sent!", "success", {
                 buttons: false,
                 timer: 1729
             }); </script>');
