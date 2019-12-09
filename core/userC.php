@@ -41,6 +41,7 @@ class userC
             }
             return $name->fetchColumn();
     }
+   
     function findID($email)
     {
         $sql = "SELECT Account_ID FROM users where email='$email'";

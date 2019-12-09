@@ -67,9 +67,18 @@ function afficherReservationID($ID_user)
         die('Erreur: '.$e->getMessage());
         }
 
-
-
-
+}
+function findNameID($id)
+{
+    $sql = "SELECT Full_name FROM users where Account_ID='$id'";
+    $db= config::getConnection();
+    try{
+        $name=$db->query($sql);
+        }
+    catch (Exception $e){
+        die('Erreur: '.$e->getMessage());
+        }
+        return $name->fetchColumn();
 }
 
     function addReservation($reservation)

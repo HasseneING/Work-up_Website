@@ -15,6 +15,17 @@ if($_SESSION['role']!='admin')
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet"/>
   <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet" />
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>  
+  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>            
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" /> 
+
+
+
+
   <!-- PLUGINS CSS STYLE -->
   <link href="assetsAdmin/plugins/toaster/toastr.min.css" rel="stylesheet" />
   <link href="assetsAdmin/plugins/nprogress/nprogress.css" rel="stylesheet" />
@@ -26,7 +37,6 @@ if($_SESSION['role']!='admin')
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
-  <script src="assetsAdmin/plugins/jquery/jquery.min.js"></script>
   <script src="assetsAdmin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assetsAdmin/plugins/toaster/toastr.min.js"></script>
   <script src="assetsAdmin/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
@@ -45,6 +55,8 @@ if($_SESSION['role']!='admin')
   <script src="assetsAdmin/js/date-range.js"></script>
   <script src="assetsAdmin/js/map.js"></script>
   <script src="assetsAdmin/js/custom.js"></script>
+
+
 
   <!-- SLEEK CSS -->
   <link id="sleek-css" rel="stylesheet" href="assetsAdmin/css/sleek.css" />
@@ -201,7 +213,10 @@ if($_SESSION['role']!='admin')
                           </ul>
                         </li>
                         
-
+<style>html
+{
+    font-size: 100%;
+}</style>
                         
                         <li  class="has-sub" >
                           <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
@@ -725,41 +740,7 @@ if($_SESSION['role']!='admin')
 						$listeReservations=$reservation1C->afficherReservation();
 						
                  ?>
-                 <style>
-                 .my-custom-scrollbar {
-                    position: relative;
-                    height: 500px;
-                    overflow: auto;
-                    }
-                    .table-wrapper-scroll-y {
-                    display: block;
-                    }
 
-
-                    table.dataTable thead .sorting:after,
-                    table.dataTable thead .sorting:before,
-                    table.dataTable thead .sorting_asc:after,
-                    table.dataTable thead .sorting_asc:before,
-                    table.dataTable thead .sorting_asc_disabled:after,
-                    table.dataTable thead .sorting_asc_disabled:before,
-                    table.dataTable thead .sorting_desc:after,
-                    table.dataTable thead .sorting_desc:before,
-                    table.dataTable thead .sorting_desc_disabled:after,
-                    table.dataTable thead .sorting_desc_disabled:before {
-                      bottom: .5em;
-                    }
-
-                  </style>
-                  <script>
-                  
-                  $(document).ready(function () {
-                  $('#Search').DataTable({
-                    "pagingType": "simple" // "simple" option for 'Previous' and 'Next' buttons only
-                   });
-                  $('.dataTables_length').addClass('bs-select');
-                  });
-                                                  
-                  </script>
 
                   <div class="card card-table-border-none" id="promotion">
                     <div class="card-header justify-content-between">
@@ -771,15 +752,18 @@ if($_SESSION['role']!='admin')
                     <div class="table-wrapper-scroll-y my-custom-scrollbar">
 
                     <div class="card-body pt-0 pb-5">
-                      <table id="Search"  class="table card-table table-responsive table-responsive-large table-hover table-sm" style="width:100%">
+                      <table id="myTable"  class="table card-table table-responsive table-responsive-large table-hover table-sm" style="width:100%">
                         <thead>
                           <tr>
-                              <th class="th-sm">ID_user</th>
-                              <th class="th-sm">date Reservation</th>
-                              <th class="th-sm">places</th>
-                              <th class="th-sm">Numero Telephone</th>
-                              <th class="th-sm">Notes</th>
-                              <th class="th-sm">Status</th>
+                              <th>Nom</th>
+                              <th>date Reservation</th>
+                              <th>places</th>
+                              <th>Numero Telephone</th>
+                              <th>Notes</th>
+                              <th>Status</th>
+                              <th></th>
+                              <th></th>
+                              <th></th>
                           </tr>                      
                         </thead>
                         <tbody>
@@ -788,9 +772,9 @@ if($_SESSION['role']!='admin')
                         if(is_array($listeReservations) || is_object($listeReservations)){
                         foreach ($listeReservations as $row) {
                         ?>
-                         <tr>
+                        
                           <tr>
-                          <td class="d-none d-md-table-cell " align="center"><?PHP echo $row['ID_user']; ?></td>
+                          <td class="d-none d-md-table-cell " align="center"><?PHP echo $reservation1C->findNameID($row['ID_user']); ?></td>
                             <td>
                               <a class="text-dark" href=""align="center"> <?PHP echo $row['date_reservation']; ?></a>
                             </td>
@@ -807,12 +791,35 @@ if($_SESSION['role']!='admin')
                             </form>
                           </tr>
                           <?php }} ?>
-                    
-                          
-                            
-                          </tr>
                         </tbody>
                       </table>
+                      <style>
+                 .my-custom-scrollbar {
+                    position: relative;
+                    height: 500px;
+                    overflow: auto;
+                    }
+                    .table-wrapper-scroll-y {
+                    display: block;
+                    }
+
+
+                    #myTable.dataTable thead .sorting:after,
+                    #myTable.dataTable thead .sorting:before,
+                    #myTable.dataTable thead .sorting_asc:after,
+                    #myTable.dataTable thead .sorting_asc:before,
+                    #myTable.dataTable thead .sorting_asc_disabled:after,
+                    #myTable.dataTable thead .sorting_asc_disabled:before,
+                    #myTable.dataTable thead .sorting_desc:after,
+                    #myTable.dataTable thead .sorting_desc:before,
+                    #myTable.dataTable thead .sorting_desc_disabled:after,
+                    #myTable.dataTable thead .sorting_desc_disabled:before {
+                      bottom: .5em;
+                    }
+
+                  </style>
+    
+
                     </div>
                   </div>
                 </div>
@@ -820,17 +827,11 @@ if($_SESSION['role']!='admin')
           </div>
         </div>
       </div>
-
-
+      
                   <footer class="footer mt-auto">
             <div class="copyright bg-white">
               
             </div>
-            <script>
-                var d = new Date();
-                var year = d.getFullYear();
-                document.getElementById("copy-year").innerHTML = year;
-            </script>
           </footer>
 
       </div>
@@ -842,3 +843,20 @@ if($_SESSION['role']!='admin')
 
 
   </body>
+  <script>
+
+$(document).ready(function() {
+    $('#myTable').DataTable(
+      {
+        "order": [[ 1, "desc" ]],
+        "dom": '<"top"i>rt<"bottom"flp><"clear">',
+        "bLengthChange": false
+
+      }
+    );
+  });                                                 
+</script>
+</html>
+
+
+
