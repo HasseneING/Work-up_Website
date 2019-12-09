@@ -109,7 +109,7 @@ if($_SESSION['role']!='admin')
               <li >
                 <a class="sidenav-item-link" href="admin.php">
                   <span class="nav-text">Accueil</span>
-                  
+
                 </a>
               </li>
         </div>
@@ -136,7 +136,7 @@ if($_SESSION['role']!='admin')
                   <span class="nav-text">Modifier services</span>
                 </a>
               </li>
-
+              
               <li >
                 <a class="sidenav-item-link" href="services/delete.php">
                   <span class="nav-text">Supprimer services</span>

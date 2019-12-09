@@ -3,7 +3,17 @@
 include "../core/userC.php";
 include "../entities/user.php";
 
-if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['password']) )
+
+
+
+$secretKey="6LcG08YUAAAAACVEsyIMyRx41ehzgETVgBUyBjXz";
+$responseKey=$_POST['g-recaptcha-response'];
+$userIP= $_SERVER['REMOTE_ADDR'];
+$url="https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
+$response=file_get_contents($url);
+$response=json_decode($response);
+
+if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['password']) and $response->success )
 {
 
 
@@ -23,7 +33,8 @@ else header('location: signupfailedredir.php');
 
 
 }
-else echo('bruh check yo self');
+else header('location: signupfailedredir.php');
+
 
 
 ?>

@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="login.css">
     <script src="Login.js"></script>
 
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body style="background: #FFCC33;">
@@ -60,7 +63,10 @@
                                     <label style="color: aliceblue;">Email Address</label>
                                     <input type="text" name="email">
                                     <label style="color: aliceblue;">Password</label>
-                                    <input type="password" name="password">
+                                    <input type="password" name="password">         
+
+                                    <div class="g-recaptcha" data-sitekey="6LcG08YUAAAAAFA19FKFPMLftz8F86NZN3AVkenQ"></div>
+
                                     <button type="button" onclick="tsign();" >Join now</button>
                                     <p style="color: aliceblue;">By clicking Join now, you agree to Workup's User Agreement, Privacy Policy, and Cookie Policy.</p>
                                 </form>
