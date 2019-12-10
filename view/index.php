@@ -109,6 +109,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#features">About</a></li>
                         <li><a href="#service">Service</a></li>
+                        <li><a href="#events">Events</a></li>
                         <li><a href="#portfolio">Visit</a></li>
                         <li><a href="#test">Testimonial</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -294,6 +295,9 @@
             </div>
         </section>
         <!-- End off Business section -->
+
+        
+
 
 
         <!--Team And Skill Section-->

@@ -32,17 +32,21 @@ class eventC
 
 
     
-    function modifyevent($id,$update)
+ 
+    function modify($nom_event,$update,$date_deb,$update0,$date_fin,$update1)
     {
-        $sql = "UPDATE events SET id=:id WHERE id=$id";
+        $sql="UPDATE events SET nom_event=:nom_event,date_deb=:date_deb,date_fin=:date_fin WHERE nom_event=:nom_event";
 
         $db = config::getConnection();
         try {
 
             $req = $db->prepare($sql);
 
-            $req->bindValue(':id',$id);
+          
 
+            $req->bindValue(':nom_event',$update);
+         $req->bindValue(':date_deb',$update0);
+         $req->bindValue(':date_fin',$update1);
             $req->execute();
 
             $s = $req->execute();
@@ -53,7 +57,7 @@ class eventC
 
     function deletevent($nom_event)
     {
-        $sql = "DELETE FROM events where nom_event=:$nom_event";
+        $sql = "DELETE FROM events where nom_event=:nom_event";
         $db = config::getConnection();
         try {
             $req = $db->prepare($sql);

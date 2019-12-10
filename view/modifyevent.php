@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -798,66 +797,50 @@
 
 
                   <!-- Recent Order Table -->
-                  <?php
-                        include "../core/eventC.php";
-                        $event1C = new eventC();
-						$listeevents=$event1C->afficherevent();
-						
-                 ?>
-                  <div class="card card-table-border-none" id="promotion">
-                    <div class="card-header justify-content-between">
-                      <h2>events</h2>
-                      <div class="date-range-report ">
-                        <span></span>
-                      </div>
-                    </div>
-                    <div class="card-body pt-0 pb-5">
-                      <table class="table card-table table-responsive table-responsive-large" style="width:100%">
-                        <thead>
-                          <tr>
-                            <th>id_event</th>
-                            <th class="d-none d-md-table-cell">date debut</th>
-							<th>date fin</th>
-                            <th>nom event</th>
-							<th>description</th>
-							
-							
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        if(is_array($listeevents) || is_object($listeevents)){
-                        foreach ($listeevents as $row) {
-                        ?>
-                         <tr>
-                          <tr>
-                            <td align="center"><?PHP echo $row['id']; ?></td>
-                            <td >
-                              <a class="text-dark" href=""align="center"> <?PHP echo $row['date_deb']; ?></a>
-                            </td>
-                            <td class="d-none d-md-table-cell" align="center"><?PHP echo $row['date_fin']; ?></td>
-							<td class="d-none d-md-table-cell"><?PHP echo $row['nom_event']; ?></td>
-							<td class="d-none d-md-table-cell"><?PHP echo $row['descri']; ?></td>
-						
-                           
-              <form method="POST" action="modifyevent.php">
-                          <td><button type="submit" name="modify" value="modify" class="mb-1 btn btn-pill btn-danger">Modify</button></td>
-                          <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                          <input type="hidden" name="date_deb" value="<?php echo $row['date_deb']; ?>">
-                          <input type="hidden" name="date_fin" value="<?php echo $row['date_fin']; ?>">
-                          <input type="hidden" name="nom_event" value="<?php echo $row['nom_event']; ?>">
-                          <input type="hidden" name="descri" value="<?php echo $row['descri']; ?>">
-                        </form>
+                  <?PHP
+                    include "../entities/eventi.php";
+                    include "../core/eventC.php";
+
+                    if (isset($_POST['id']) && isset($_POST['date_deb'])&&isset($_POST['date_fin'])&&isset($_POST['nom_event'])) {
+                        $id=$_POST['id'];
+                        $date_deb = $_POST['date_deb'];
+                        $date_fin = $_POST['date_fin'];
+                        $nom_event=$_POST['nom_event'];
+                     
+
                         
-                        <form method="POST" action="deletevnt.php">
+                        
+                        ?>
 
-<td><button type="submit" name="delete" class="mb-1 btn btn-pill btn-danger" value="delete">Delete</button></td>
-              <input type="hidden" value="<?php echo $row['nom_event'];?>" name="nom_event">
+                        <form method="POST" action="modifyee.php">
+                            <table border="0" class="table card-table table-responsive table-responsive-large" style="width:100%">
+                                <tr>
+                                    <td>Event name</td>
+                                    <td><input type="text" name="change" value="<?PHP echo $nom_event ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td>EventID</td>
+                                    <td><input type="text" name="id" value="<?PHP echo $id ?>" disabled></td>
+                                </tr>
+                                <tr>
+                                    <td> Event start_date</td>
+                                    <td><input type="date" name="change0" value="<?PHP echo $date_deb ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td>Event end_date</td>
+                                    <td><input type="date" name="change1" value="<?PHP echo $date_fin ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td><button name="modify2"  class="mb-1 btn btn-pill btn-danger">Modify</button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="hidden" name="name" value="<?PHP echo $nom_event; ?>"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    <?PHP  } ?>
 
-              </form>
-                          </tr>
-                          <?php }} ?>
-                    
+
                           
                             
                           </tr>
