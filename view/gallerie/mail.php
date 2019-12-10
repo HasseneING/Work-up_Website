@@ -1,7 +1,7 @@
 <?php 
 include "../../core/userC.php";
 $user1C=new userC();
-$list=$user1C->afficherUsers();
+$liste=$user1C->afficherUsers();
 require 'PHPMailer-master/PHPMailerAutoload.php';
 
 

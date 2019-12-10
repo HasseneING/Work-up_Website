@@ -1,6 +1,7 @@
 <?php
 
-include __DIR__ . "/../config.php";
+//include __DIR__ . "../../config.php";
+include  "../../config.php";
 
 class userC
 {
@@ -112,6 +113,17 @@ class recoverC
         $stmt->execute([$email]);
         return $stmt->fetchColumn();
     }
+    function afficherUsers(){
+		$sql="SElECT * From users";
+		$db = config::getConnection();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+	}
 
     function update($email, $code)
     {
