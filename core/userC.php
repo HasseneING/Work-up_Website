@@ -1,7 +1,6 @@
 <?php
 
-//include __DIR__ . "../../config.php";
-include  "../../config.php";
+include __DIR__ . "../../config.php";
 
 class userC
 {
@@ -102,7 +101,49 @@ class userC
             die('Erreur: ' . $e->getMessage());
         }
     }
+
+    function afficherUsers(){
+		$sql= "SELECT * FROM users";
+		$db = config::getConnection();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+    }
+
+    function update($email,$password){
+        $sql = "UPDATE users SET password=:password WHERE email='$email'";
+
+        $db = config::getConnection();
+        try {
+
+            $req = $db->prepare($sql);
+
+            $enc_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $req->bindValue(':password',$enc_password);
+
+            $req->execute();
+
+            $s = $req->execute();
+        } catch (Exception $e) {
+            echo " Erreur ! " . $e->getMessage();
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
 
 class recoverC
 {
@@ -113,17 +154,7 @@ class recoverC
         $stmt->execute([$email]);
         return $stmt->fetchColumn();
     }
-    function afficherUsers(){
-		$sql="SElECT * From users";
-		$db = config::getConnection();
-		try{
-		$liste=$db->query($sql);
-		return $liste;
-		}
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }	
-	}
+    
 
     function update($email, $code)
     {

@@ -1,8 +1,10 @@
 <?php 
+
 include "../../core/userC.php";
-$user1C=new userC();
-$liste=$user1C->afficherUsers();
 require 'PHPMailer-master/PHPMailerAutoload.php';
+
+$user1C=new userC();
+$list=$user1C->afficherUsers();
 
 
 foreach ($list as $row) {
@@ -33,7 +35,6 @@ $mail->SMTPOptions = array(
         'allow_self_signed' => true
     )
 );
-
 //var_dump($mail);
 if (!$mail->send()) 
     { 
@@ -42,8 +43,6 @@ if (!$mail->send())
     } 
     else
     {
-
-
     ?>
         <script>
         Javascript:alert('Mail sent !');

@@ -66,126 +66,121 @@
 
 
 
-          <li  class="has-sub" >
-      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
-        aria-expanded="false" aria-controls="dashboard">
-        <i class="mdi mdi-view-dashboard-outline"></i>
-        <span class="nav-text">Dashboard</span> <b class="caret"></b>
-      </a>
-      <ul  class="collapse"  id="dashboard"
-        data-parent="#sidebar-menu">
-        <div class="sub-menu">
-              <li >
-                <a class="sidenav-item-link" href="../admin.php">
-                  <span class="nav-text">Accueil</span>
-                  
-                </a>
-              </li>
-        </div>
-      </ul>
-    </li>
+            <li class="has-sub">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
+                <i class="mdi mdi-view-dashboard-outline"></i>
+                <span class="nav-text">Dashboard</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
+                <div class="sub-menu">
+                  <li>
+                    <a class="sidenav-item-link" href="../admin.php">
+                      <span class="nav-text">Accueil</span>
 
-                  <li  class="has-sub active" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Services"
-                      aria-expanded="false" aria-controls="Services">
-                      <i class="mdi mdi-page-next-outline"></i>
-                      <span class="nav-text">Gerer Services</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse"  id="Services"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">                        
-                            <li >
-                              <a class="sidenav-item-link" href="add.php">
-                                <span class="nav-text">Ajouter services</span>
-                              </a>
-                            </li>
-                                      
-                            <li >
-                              <a class="sidenav-item-link" href="modify.php">
-                                <span class="nav-text">Modifier services</span>
-                              </a>
-                            </li>
+                  </li>
+                </div>
+              </ul>
+            </li>
 
-                            <li >
-                              <a class="sidenav-item-link" href="delete.php">
-                                <span class="nav-text">Supprimer services</span>
-                              </a>
-                            </li>
+            <li class="has-sub active">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Services" aria-expanded="false" aria-controls="Services">
+                <i class="mdi mdi-page-next-outline"></i>
+                <span class="nav-text">Gerer Services</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="Services" data-parent="#sidebar-menu">
+                <div class="sub-menu">
+                  <li>
+                    <a class="sidenav-item-link" href="services/afficher.php">
+                      <span class="nav-text">Afficher services</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="add.php">
+                      <span class="nav-text">Ajouter services</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="sidenav-item-link" href="modify.php">
+                      <span class="nav-text">Modifier services</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="sidenav-item-link" href="delete.php">
+                      <span class="nav-text">Supprimer services</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Reserva" aria-expanded="false" aria-controls="Services">
+                <i class="mdi mdi-book-open-outline"></i>
+                <span class="nav-text">Gerer Reservations</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="Reserva" data-parent="#sidebar-menu">
+                <div class="sub-menu">
+                  <li>
+                    <a class="sidenav-item-link" href="../Reservation.php">
+                      <span class="nav-text">Afficher Reservations</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+
+
+
+            <li class="has-sub ">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements" aria-expanded="false" aria-controls="ui-elements">
+                <i class="mdi mdi-folder-multiple-outline"></i>
+                <span class="nav-text">UI Elements</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="ui-elements" data-parent="#sidebar-menu">
+                <div class="sub-menu">
+
+
+                  <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#components" aria-expanded="false" aria-controls="components">
+                      <span class="nav-text">Components</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="components">
+                      <div class="sub-menu">
+
+                        <li>
+                          <a href="alert.html">Alert</a>
+                        </li>
+
+
                       </div>
                     </ul>
                   </li>
 
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Reserva"
-                      aria-expanded="false" aria-controls="Services">
-                      <i class="mdi mdi-book-open-outline"></i>
-                      <span class="nav-text">Gerer Reservations</span> <b class="caret"></b>
+
+
+                  <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
+                      <span class="nav-text">Icons</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse"  id="Reserva"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">                        
-                            <li >
-                              <a class="sidenav-item-link" href="../Reservation.php">
-                                <span class="nav-text">Afficher Reservations</span>
-                              </a>
-                            </li>
-                       </div>
+                    <ul class="collapse" id="icons">
+                      <div class="sub-menu">
+
+                        <li>
+                          <a href="material-icon.html">Material Icon</a>
+                        </li>
+
+                        <li>
+                          <a href="flag-icon.html">Flag Icon</a>
+                        </li>
+
+                      </div>
                     </ul>
                   </li>
 
-
-
-              
-                  <li  class="has-sub " >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
-                      aria-expanded="false" aria-controls="ui-elements">
-                      <i class="mdi mdi-folder-multiple-outline"></i>
-                      <span class="nav-text">UI Elements</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="ui-elements"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#components"
-                            aria-expanded="false" aria-controls="components">
-                            <span class="nav-text">Components</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="components">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="alert.html">Alert</a>
-                              </li>
-                             
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
-
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
-                            aria-expanded="false" aria-controls="icons">
-                            <span class="nav-text">Icons</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="icons">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="material-icon.html">Material Icon</a>
-                              </li>
-                              
-                              <li >
-                                <a href="flag-icon.html">Flag Icon</a>
-                              </li>
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
 
 
                   <li class="has-sub">
@@ -671,46 +666,51 @@
 
           <!-- Recent Order Table -->
           <?PHP
-                    include "../../entities/service.php";
-                    include "../../core/serviceC.php";
+          include "../../entities/service.php";
+          include "../../core/serviceC.php";
 
-                    if (isset($_POST['name']) && isset($_POST['id'])) {
-                        
-                        $name = $_POST['name'];
-                        $id = $_POST['id'];
-                        
-                        ?>
+          if (isset($_POST['name']) && isset($_POST['id'])) {
 
-                        <form method="POST" action="modifyss.php">
-                            <table border="0" class="table card-table table-responsive table-responsive-large" style="width:100%">
-                                <tr>
-                                    <td>Name</td>
-                                    <td><input type="text" name="change" value="<?PHP echo $name ?>"></td>
-                                </tr>
-                                <tr>
-                                    <td>Service ID</td>
-                                    <td><input type="text" name="id" value="<?PHP echo $id ?>" disabled></td>
-                                </tr>
-                                <tr>
-                                    <td><button name="modify2"  class="mb-1 btn btn-pill btn-danger">Modify</button></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="hidden" name="name" value="<?PHP echo $name; ?>"></td>
-                                </tr>
-                            </table>
-                        </form>
-                    <?PHP  } ?>
+            $name = $_POST['name'];
+            $id = $_POST['id'];
 
+            ?>
 
+            <form method="POST" enctype="multipart/form-data" action="modifyss.php">
+              <table border="0" class="table card-table table-responsive table-responsive-large" style="width:100%">
 
-                  </tr>
-                </tbody>
+                <tr>
+                  <td>Service ID</td>
+                  <td><input type="text" name="id" value="<?PHP echo $id ?>" disabled></td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td><input type="text" name="change" value="<?PHP echo $name ?>"></td>
+                </tr>
+                <tr>
+                  <td>image to change</td>
+                  <td><input type="file" name="foto"></td>
+                </tr>
+                <tr>
+                  <td><button type="submit" name="modify" class="mb-1 btn btn-pill btn-danger">Modify</button></td>
+                </tr>
+                <tr>
+                  <td><input type="hidden" name="name" value="<?PHP echo $name; ?>"></td>
+                </tr>
               </table>
-            </div>
-          </div>
+            </form>
+          <?PHP  } ?>
+
+
+
+          </tr>
+          </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
+  </div>
 
 
 

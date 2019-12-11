@@ -1,6 +1,7 @@
 <?php
 include __DIR__ . "/../config.php";
 
+
 class serviceC
 {
 
@@ -55,8 +56,8 @@ class serviceC
     function addservice($service)
     {
 
-        $sql = "INSERT into services (name) 
-                values (:name)";
+        $sql = "INSERT into services (name,image) 
+                values (:name,:image)";
 
         $db = config::getConnection();
 
@@ -65,8 +66,12 @@ class serviceC
             $req = $db->prepare($sql);
 
             $name = $service->getname();
+            $image = $service->getimage();
+
 
             $req->bindValue(':name', $name);
+            $req->bindValue(':image', $image);
+
 
 
             $req->execute();
@@ -86,6 +91,26 @@ class serviceC
             $req = $db->prepare($sql);
 
             $req->bindValue(':name',$update);
+
+            $req->execute();
+
+            $s = $req->execute();
+        } catch (Exception $e) {
+            echo " Erreur ! " . $e->getMessage();
+        }
+    }
+
+    function modifyf($name,$update,$update1)
+    {
+        $sql = "UPDATE services SET name=:name,image=:image WHERE name='$name'";
+
+        $db = config::getConnection();
+        try {
+
+            $req = $db->prepare($sql);
+
+            $req->bindValue(':name',$update);
+            $req->bindValue(':image',$update1);
 
             $req->execute();
 

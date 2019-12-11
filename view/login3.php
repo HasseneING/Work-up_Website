@@ -4,7 +4,7 @@
 
 <html> 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<body style="background:black;">
+<body style="background:transparent;">
 </body>
 </html>
 <?php
@@ -19,7 +19,7 @@ $enc_password=$user1C->findPassword($email);
 $name=$user1C->findName($email);
 $role=$user1C->FindRole($email);
 $Id_user=$user1C->FindID($email);
-echo $name;
+
 if(password_verify($password,$enc_password))
 {
     
