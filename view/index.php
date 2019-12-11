@@ -348,7 +348,7 @@
                     </div>
 
                     <div class="content">
-                        <h6 class="category" >Event</h6>
+                        <h6 class="category" >Events</h6>
                         <h4 class="title"><a href="#"><?PHP echo $row['nom_event']; ?> </a></h4>
                         <p class="description" style="color:#003366;"><?PHP echo $row['descri']; ?></p>
                     </div>
