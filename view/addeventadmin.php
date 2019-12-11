@@ -337,7 +337,7 @@ if($_SESSION['role']!='admin')
                       <span class="d-none d-lg-inline-block"><?php if(isset($_SESSION['name']))echo $_SESSION['name'];?></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                      <!-- User image -->
+                      <!-- User imagde -->
                       <li class="dropdown-header">
                       <img src="assetsAdmin/img/user/user.png" class="img-circle" alt="User Image" />
                         <div class="d-inline-block">
