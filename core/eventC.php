@@ -7,7 +7,7 @@ class eventC
 
     function afficherevent()
     {
-        $sql="SELECT * from events";
+        $sql="SELECT * from events ORDER BY date_deb";
         $db= config::getConnection();
         try{
             $liste=$db->query($sql);
@@ -33,23 +33,18 @@ class eventC
 
     
  
-    function modify($nom_event,$update,$date_deb,$update0,$date_fin,$update1)
+    function modify($nom_event,$update)
     {
-        $sql="UPDATE events SET nom_event=:nom_event,date_deb=:date_deb,date_fin=:date_fin WHERE nom_event=:nom_event";
+        $sql = "UPDATE events SET nom_event=:nom_event WHERE nom_event=:nom_event";
 
         $db = config::getConnection();
         try {
 
             $req = $db->prepare($sql);
+             $req->bindValue(':nom_event',$update);
+              $req->execute();
 
-          
-
-            $req->bindValue(':nom_event',$update);
-         $req->bindValue(':date_deb',$update0);
-         $req->bindValue(':date_fin',$update1);
-            $req->execute();
-
-            $s = $req->execute();
+            $s= $req->execute();
         } catch (Exception $e) {
             echo " Erreur ! " . $e->getMessage();
         }
@@ -103,9 +98,17 @@ class eventC
         }
     }
 
+    function sortevent(){
+
+
+
+
+    }
+
 
 
 }
+
 
 
 ?>

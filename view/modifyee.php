@@ -14,11 +14,13 @@
 <?php
 
 include "../core/eventC.php";
+include "../entities/eventi.php";
+
 
                     if (isset($_POST['modify'])) {
-                        $event1C = new eventC();
-                        $event1C->modify($_POST['nom_event'],$_POST['change'],$_POST['date_deb'],$_POST['change0'],$_POST['date_fin'],$_POST['change1']);
+                        $event2C = new eventC();
+                        $event2C->modify($_POST['nom_event'],$_POST['change']);
                         
-                        header("location: modifyevent.php");
+                        header("location: addeventadmin.php");
                     }
                     ?>

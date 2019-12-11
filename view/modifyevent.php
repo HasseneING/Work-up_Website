@@ -831,11 +831,9 @@
                                     <td><input type="date" name="change1" value="<?PHP echo $date_fin ?>"></td>
                                 </tr>
                                 <tr>
-                                    <td><button name="modify2"  class="mb-1 btn btn-pill btn-danger">Modify</button></td>
+                                    <td><button name="modify"  class="mb-1 btn btn-pill btn-danger">Modify</button></td>
                                 </tr>
-                                <tr>
-                                    <td><input type="hidden" name="name" value="<?PHP echo $nom_event; ?>"></td>
-                                </tr>
+                                
                             </table>
                         </form>
                     <?PHP  } ?>

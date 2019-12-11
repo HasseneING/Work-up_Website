@@ -800,6 +800,7 @@
                   <!-- Recent Order Table -->
                   <?php
                         include "../core/eventC.php";
+                        include "../entities/eventi.php";
                         $event1C = new eventC();
 						$listeevents=$event1C->afficherevent();
 						

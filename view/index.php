@@ -244,7 +244,7 @@
 
         <!--Business Section-->
         <?php
-          include "../core/serviceC.php";
+         require_once ('../core/serviceC.php');
 
           $service1C = new serviceC();
           $list = $service1C->afficherservices();
@@ -295,6 +295,37 @@
             </div>
         </section>
         <!-- End off Business section -->
+
+        
+ <!-- EVENTS section -->
+        <?php
+      
+         
+
+          $event1C = new eventC();
+          $liste = $event1C->afficherevent();
+
+          ?>
+        <section id="events" >
+            
+                                                <?php 
+                        if (is_array($liste) || is_object($liste)) {
+                            foreach ($liste as $row) { ?>
+                                                   
+                                                                                
+                        
+                                                        
+                                                        
+                        <h5 class="text-black m-top-20"><?PHP echo $row['nom_event']; ?></h5>
+                                                  
+                                                    <?php } 
+                    } 
+                    ?>
+                                                
+                        
+
+                       
+        </section>
 
         
 
