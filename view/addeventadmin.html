@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<!-- adding  style -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="assetsAdmin/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/css/util.css">
-	<link rel="stylesheet" type="text/css" href="assetsAdmin/css/main.css">
+    <!-- adding  style -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="assetsAdmin/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/css/util.css">
+    <link rel="stylesheet" type="text/css" href="assetsAdmin/css/main.css">
 
 
-	<title>Document</title>
+    <title>Document</title>
 </head>
+
 <body>
-	
 
 
-<div class="card card-table-border-none" id="promotion">
-<div class="card-header justify-content-between">
-  <h2>add event </h2>
-  <div class="date-range-report ">
-	<span></span>
-  </div>
-</div>
-<div class="card-body pt-0 pb-5">
-  <!-- event adding  form -->
-  
 
-<div class="wrap-contact100">
-<form action ="event.php" class="contact100-form validate-form" method="post">
-<span class="contact100-form-title">
+    <div class="card card-table-border-none" id="promotion">
+        <div class="card-header justify-content-between">
+            <h2>add event </h2>
+            <div class="date-range-report ">
+                <span></span>
+            </div>
+        </div>
+        <div class="card-body pt-0 pb-5">
+            <!-- event adding  form -->
+
+
+            <div class="wrap-contact100">
+                <form action="addeventadmin.php" class="contact100-form validate-form" method="post">
+                    <span class="contact100-form-title">
 adding an event 
 </span>
 
+<<<<<<< Updated upstream
 <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
 <span class="label-input100"> Event Id :</span>
 <input class="input100" type="number"  name="id" placeholder="Enter Id">
@@ -83,8 +86,45 @@ adding an event
 </div>
 </div>
 </form>
+=======
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                        <span class="label-input100"> Event Id :</span>
+                        <input class="input100" type="number" name="id" placeholder="Enter Id">
+                    </div>
+
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input">
+                        <span class="label-input100"> The Starting Date </span>
+                        <input class="input100" type="date" name="date_deb" placeholder=" enter starting date">
+                    </div>
+
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input">
+                        <span class="label-input100"> the Ending Date : </span>
+                        <input class="input100" type="date" name="date_fin" placeholder="enter ending date">
+                    </div>
+
+                    <div class="wrap-input100">
+                        <span class="label-input100"> Event Name :</span>
+                        <input class="input100" type="text" name="nom_event" placeholder="enter name">
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Message is required">
+                        <span class="label-input100">Decription : </span>
+                        <textarea class="input100" name="descri" placeholder="Your description here..."></textarea>
+                    </div>
+
+                    <div class="container-contact100-form-btn">
+                        <div class="wrap-contact100-form-btn">
+                            <div class="contact100-form-bgbtn"></div>
+                            <button class="contact100-form-btn">
+		Submit
+	</button>
+                        </div>
+                    </div>
+                </form>
+>>>>>>> Stashed changes
 
 
 
 </body>
+
 </html>
