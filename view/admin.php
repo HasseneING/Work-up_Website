@@ -179,6 +179,11 @@ if($_SESSION['role']!='admin')
                   <span class="nav-text">Afficher Evenements</span>
                 </a>
               </li>
+              <li >
+                <a class="sidenav-item-link" href="addeventadmin.html">
+                  <span class="nav-text">Ajouter Evenements</span>
+                </a>
+              </li>
          </div>
       </ul>
     </li>

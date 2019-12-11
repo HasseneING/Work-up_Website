@@ -13,6 +13,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="favicon.ico">
 
+
+
+    <link rel="canonical" href="https://www.creative-tim.com/product/hipster-as-f-cards"/>
+
+    <!-- Stylesheet      -->
+    <link href="CardAssets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="CardAssets/css/hipster_cards.css" rel="stylesheet"/>
+   
+
+    <!--     Fonts and icons     -->
+    <link href="CardAssets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
     <!--Google Font link-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
@@ -308,15 +321,42 @@
           ?>
         <section id="events" >
             
-                                                <?php 
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     <?php 
                         if (is_array($liste) || is_object($liste)) {
                             foreach ($liste as $row) { ?>
                                                    
                                                                                 
+                                                   <div class="card-box col-md-4 col-sm-6">
+                <div class="card" style="background-color:#FFCC33;">
+                    <div class="header">
+                        <img src="assets/img/lifestyle-8.jpg"/>
+                        <div class="filter"></div>
+
+                        <div class="actions">
+                            <button class="btn btn-round btn-fill btn-neutral btn-modern">Click here</button>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h6 class="category" >Event</h6>
+                        <h4 class="title"><a href="#"><?PHP echo $row['nom_event']; ?> </a></h4>
+                        <p class="description" style="color:#003366;"><?PHP echo $row['descri']; ?></p>
+                    </div>
+                </div> <!-- end card -->
+             </div>
+                                                        
+                                                        
                         
-                                                        
-                                                        
-                        <h5 class="text-black m-top-20"><?PHP echo $row['nom_event']; ?></h5>
                                                   
                                                     <?php } 
                     } 
