@@ -106,8 +106,8 @@
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
                     <a class="navbar-brand" href="#brand">
                         <img src="assets/images/logo.png" class="logo" alt="" height="50" width="150">
                         <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
@@ -160,7 +160,7 @@
 
                     <a class="mouse-scroll" href="#about">
                         <span class="mouse">
-                                <span class="mouse-movement"></span>
+                            <span class="mouse-movement"></span>
                         </span>
                         <span class="mouse-message fadeIn">Explore</span> <br />
                         <!--<i class="fa fa-angle-down m-top-10 fadeIn mouse-message"></i>-->
@@ -181,6 +181,7 @@
             function off() {
                 document.getElementById("overlay").style.display = "none";
             }
+
             function on2() {
                 document.getElementById("overlay2").style.display = "block";
             }
@@ -209,56 +210,57 @@
             </div>
         </section>
 
-<section id="vbook">
-<div id="overlay2" onclick="off2();">
+        <section id="vbook">
+            <div id="overlay2" onclick="off2();">
 
-<?php
-                        include "../core/reservationC.php";
-                        $reservation1C = new reservationC();
-						$listeReservations=$reservation1C->afficherReservationID($_SESSION['id']);
-						
-                 ?>
-                  <div style="background:white; padding-top:50px;" class="card card-table-border-none" id="promotion">
+                <?php
+                include "../core/reservationC.php";
+                $reservation1C = new reservationC();
+                $listeReservations = $reservation1C->afficherReservationID($_SESSION['id']);
+
+                ?>
+                <div style="background:white; padding-top:50px;" class="card card-table-border-none" id="promotion">
                     <div class="card-header justify-content-between">
-                      <h2 style="padding-top:50px;margin-left: 344px;" >Reservations</h2>
-                      <div class="date-range-report ">
-                        <span></span>
-                      </div>
+                        <h2 style="padding-top:50px;margin-left: 344px;">Reservations</h2>
+                        <div class="date-range-report ">
+                            <span></span>
+                        </div>
                     </div>
                     <div class="card-body pt-0 pb-5">
-                      <table class="table card-table table-responsive table-responsive-large" style="width:50%;margin-left: 344px;">
-                        <thead>
-                          <tr>
-                            <th class="d-none d-md-table-cell">date Reservation</th>
-							<th>places</th>
-                            <th>Numero Telephone</th>
-							<th>Notes</th>
-							<th>Status</th>
-							
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        if(is_array($listeReservations) || is_object($listeReservations)){
-                        foreach ($listeReservations as $row) {
-                        ?>
-                         <tr>
-                          <tr>
-                            <td ><a class="text-dark" href=""><?PHP echo $row['date_reservation']; ?></a>                            </td>
-                            <td class="d-none d-md-table-cell"><?PHP echo $row['seats']; ?></td>
-                            <td class="d-none d-md-table-cell"><?PHP echo $row['phone']; ?></td>
-                            <td class="d-none d-md-table-cell"><a>Afficher</a></td>
-                            <td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>              
-                          </tr>
-                          <?php }} ?>
-                    
-                          
-                            
-                          </tr>
-                        </tbody>
-                      </table>
-</div>
-</section>
+                        <table class="table card-table table-responsive table-responsive-large" style="width:50%;margin-left: 344px;">
+                            <thead>
+                                <tr>
+                                    <th class="d-none d-md-table-cell">date Reservation</th>
+                                    <th>places</th>
+                                    <th>Numero Telephone</th>
+                                    <th>Notes</th>
+                                    <th>Status</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                if (is_array($listeReservations) || is_object($listeReservations)) {
+                                    foreach ($listeReservations as $row) {
+                                        ?>
+                                        <tr>
+                                        <tr>
+                                            <td><a class="text-dark" href=""><?PHP echo $row['date_reservation']; ?></a> </td>
+                                            <td class="d-none d-md-table-cell"><?PHP echo $row['seats']; ?></td>
+                                            <td class="d-none d-md-table-cell"><?PHP echo $row['phone']; ?></td>
+                                            <td class="d-none d-md-table-cell"><a>Afficher</a></td>
+                                            <td class="d-none d-md-table-cell"><?PHP echo $row['status']; ?></td>
+                                        </tr>
+                                <?php }
+                                } ?>
+
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        </section>
 
 
 
@@ -275,12 +277,12 @@
                     <label class="text-white">Number of seats:</label>
                     <br>
                     <select class="text-blue" type="number" id="seats" name="seats">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                     <br>
 
@@ -381,165 +383,144 @@
 
         <!--Business Section-->
         <?php
-          include "../core/serviceC.php";
+        include "../core/serviceC.php";
 
-          $service1C = new serviceC();
-          $list = $service1C->afficherservices();
+        $service1C = new serviceC();
+        $list = $service1C->afficherservices();
 
-          ?>
+        ?>
         <section id="service" class="service bg-grey roomy-70">
             <div class="container">
                 <div class="row">
-                    <?php if (is_array($list) || is_object($list)) {
-                                    foreach ($list as $row) { ?>
-                    <div class="main_service">
-                        <div class="col-md-6">
-                            <div class="service_slid">
-                                <div class="slid_shap bg-yellow"></div>         
-                                    <div class="service_slid_item text-center">
-                                    
-                                    <div class="service_slid_text">
-                                                                  
-        
-                                        <!--<span class="icon icon icon-tools text-black"></span>-->
-                                        <img src="assets/fonts/svg/wifi.png" class="svg"></img>
-                                        <h5 class="text-black m-top-20"><?PHP echo $row['name']; ?></h5>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div> <?php } } ?>
-        <section id="service" class="service bg-grey roomy-70">
-            <div class="container">
-                <div class="row">
+
                     <div class="main_service">
                         <div class="col-md-6">
                             <div class="service_slid">
                                 <div class="slid_shap bg-yellow"></div>
                                 <div class="service_slid_item text-center">
-                                    <div class="service_slid_text">
-                                        <!--<span class="icon icon icon-tools text-black"></span>-->
-                                        <img src="assets/fonts/svg/wifi.png" class="svg"></img>
-                                        <h5 class="text-black m-top-20">Free wifi </h5>
-                                    </div>
-                                    <div class="service_slid_text">
-                                        <img src="assets/fonts/svg/coffee.png" class="svg"></img>
-                                        <!--<span class="icon icon icon-sports-2 text-black"></span>-->
-                                        <h5 class="text-black m-top-20">Coffee </h5>
+                                    <?php
+                                    if (is_array($list) || is_object($list)) {
+                                        foreach ($list as $row) { ?>
+                                            <div class="service_slid_text">
+                                                <!--<span class="icon icon icon-tools text-black"></span>-->
+                                                <table align="center">
+                                                    <tr align="center">
+                                                        <td align="center"><img src="services/images/<?PHP echo $row['image']; ?>" class="svg" /></td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <td align="center">
+                                                            <h5 class="text-black m-top-20"><?PHP echo $row['name']; ?></h5>
+                                                        </td>
+                                                    </tr>
+                                                </table>
 
-                                    </div>
-                                    <div class="service_slid_text">
-                                        <img src="assets/fonts/svg/meeting.png" class="svg"></img>
-                                        <!--<span class="icon icon icon-sports-2 text-black"></span>-->
-                                        <h5 class="text-black m-top-20">Meeting room </h5>
-
-                                    </div>
-                                    <div class="service_slid_text">
-                                        <img src="assets/fonts/svg/service.png" class="svg"></img>
-                                        <!--<span class="icon icon icon-sports-2 text-black"></span>-->
-                                        <h5 class="text-black m-top-20">Bring your lunch</h5>
-
-                                    </div>
+                                            </div>
+                                    <?php }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5 col-md-offset-1">
-                            <div class="service_item sm-m-top-50">
-                                <div class="head_title">
-                                    <h2 class="text-uppercase">Our <strong>Service</strong></h2>
-                                </div>
-                                <div class="service_content">
-                                    <p>Either you visit us for only one hour or for the whole day, you will beneficiate from all the following services .</p>
+                    </div>
 
 
-                                </div>
+                    <div class="col-md-5 col-md-offset-1">
+                        <div class="service_item sm-m-top-50">
+                            <div class="head_title">
+                                <h2 class="text-uppercase">Our <strong>Service</strong></h2>
+                            </div>
+                            <div class="service_content">
+                                <p>Either you visit us for only one hour or for the whole day, you will beneficiate from all the following services .</p>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- End off Business section -->
-
-
-        <!--Team And Skill Section-->
-        <section id="teams" class="teams roomy-80">
-            <div class="container">
-                <div class="row">
-                    <div class="main_teams_content fix">
-                        <div class="col-md-6">
-                            <div class="teams_item">
-                                <div class="head_title">
-                                    <h2 class="text-uppercase">Our <strong>Best Team</strong></h2>
-                                </div>
-                                <p>In work'up you'll be welcomed by Shiheb,Yassine or Soulayma! or anyone there really Get comfortable and get to work!</p>
-
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="teams_item text-center sm-m-top-50">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <img src="assets/images/T1.jpg" alt="" class="img-circle" />
-                                        <h4 class="m-top-20">Shiheb <strong>NJ</strong></h4>
-                                        <h5>Lead Designer</h5>
-                                        <div class="separator"></div>
-                                        <ul class="list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- End off col-md-4 -->
-                                    <div class="col-sm-4">
-                                        <img src="assets/images/T3.jpg" alt="" class="img-circle" />
-                                        <h4 class="m-top-20">Yassine <strong>Smith</strong></h4>
-                                        <h5>UX Designer</h5>
-                                        <div class="separator"></div>
-                                        <ul class="list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- End off col-md-4 -->
-                                    <div class="col-sm-4">
-                                        <img src="assets/images/T2.jpg" alt="" class="img-circle" />
-                                        <h4 class="m-top-20">Soulayma <strong>Ayed</strong></h4>
-                                        <h5>Web Engineer</h5>
-                                        <div class="separator"></div>
-                                        <ul class="list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- End off col-md-4 -->
-                                    <div class="col-sm-4">
-                                        <img src="assets/images/T4.jpg" alt="" class="img-circle" />
-                                        <h4 class="m-top-20">Feres <strong>Nefzi</strong></h4>
-                                        <h5>Member</h5>
-                                        <div class="separator"></div>
-                                        <ul class="list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End off col-md-6 -->
-                    </div>
-                    <!-- End off main Team -->
-
-                </div>
-                <!-- End col-md-12 -->
-            </div>
-            <!-- End off row -->
     </div>
-    <!-- End off container -->
+    </section>
+    <!-- End off Business section -->
+
+
+    <!--Team And Skill Section-->
+    <section id="teams" class="teams roomy-80">
+        <div class="container">
+            <div class="row">
+                <div class="main_teams_content fix">
+                    <div class="col-md-6">
+                        <div class="teams_item">
+                            <div class="head_title">
+                                <h2 class="text-uppercase">Our <strong>Best Team</strong></h2>
+                            </div>
+                            <p>In work'up you'll be welcomed by Shiheb,Yassine or Soulayma! or anyone there really Get comfortable and get to work!</p>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="teams_item text-center sm-m-top-50">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="assets/images/T1.jpg" alt="" class="img-circle" />
+                                    <h4 class="m-top-20">Shiheb <strong>NJ</strong></h4>
+                                    <h5>Lead Designer</h5>
+                                    <div class="separator"></div>
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- End off col-md-4 -->
+                                <div class="col-sm-4">
+                                    <img src="assets/images/T3.jpg" alt="" class="img-circle" />
+                                    <h4 class="m-top-20">Yassine <strong>Smith</strong></h4>
+                                    <h5>UX Designer</h5>
+                                    <div class="separator"></div>
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- End off col-md-4 -->
+                                <div class="col-sm-4">
+                                    <img src="assets/images/T2.jpg" alt="" class="img-circle" />
+                                    <h4 class="m-top-20">Soulayma <strong>Ayed</strong></h4>
+                                    <h5>Web Engineer</h5>
+                                    <div class="separator"></div>
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- End off col-md-4 -->
+                                <div class="col-sm-4">
+                                    <img src="assets/images/T4.jpg" alt="" class="img-circle" />
+                                    <h4 class="m-top-20">Feres <strong>Nefzi</strong></h4>
+                                    <h5>Member</h5>
+                                    <div class="separator"></div>
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End off col-md-6 -->
+                </div>
+                <!-- End off main Team -->
+
+            </div>
+            <!-- End col-md-12 -->
+        </div>
+        <!-- End off row -->
+        </div>
+        <!-- End off container -->
     </section>
     <!-- End off Team & Skill section -->
 
