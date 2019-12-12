@@ -1,4 +1,18 @@
   [{
+          "label": "Ajouter Admin",
+          "link": "",
+          "tags": "",
+          "location": "Admin"
+      },
+
+      {
+          "label": "Supprimer admin",
+          "link": "",
+          "tags": "",
+          "location": "Admin"
+      },
+
+      {
           "label": "Afficher services",
           "link": "",
           "tags": "ecommerce, charts, todos, maps, tabs, tables",
