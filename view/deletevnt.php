@@ -1,4 +1,3 @@
-	
 <?PHP
             include "../entities/eventi.php";
             include "../core/eventC.php";
