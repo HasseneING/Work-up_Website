@@ -34,42 +34,42 @@ if ($_SESSION['role'] != 'admin') {
 
 
             <!-- PLUGINS CSS STYLE -->
-            <link href="../assetsAdmin/plugins/toaster/toastr.min.css" rel="stylesheet" />
-            <link href="../assetsAdmin/plugins/nprogress/nprogress.css" rel="stylesheet" />
-            <link href="../assetsAdmin/plugins/flag-icons/css/flag-icon.min.css" rel="stylesheet" />
-            <link href="../assetsAdmin/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
-            <link href="../assetsAdmin/plugins/ladda/ladda.min.css" rel="stylesheet" />
-            <link href="../assetsAdmin/plugins/select2/css/select2.min.css" rel="stylesheet" />
-            <link href="../assetsAdmin/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+            <link href="assetsAdmin/plugins/toaster/toastr.min.css" rel="stylesheet" />
+            <link href="assetsAdmin/plugins/nprogress/nprogress.css" rel="stylesheet" />
+            <link href="assetsAdmin/plugins/flag-icons/css/flag-icon.min.css" rel="stylesheet" />
+            <link href="assetsAdmin/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+            <link href="assetsAdmin/plugins/ladda/ladda.min.css" rel="stylesheet" />
+            <link href="assetsAdmin/plugins/select2/css/select2.min.css" rel="stylesheet" />
+            <link href="assetsAdmin/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
-            <script src="../assetsAdmin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="../assetsAdmin/plugins/toaster/toastr.min.js"></script>
-            <script src="../assetsAdmin/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
-            <script src="../assetsAdmin/plugins/charts/Chart.min.js"></script>
-            <script src="../assetsAdmin/plugins/ladda/spin.min.js"></script>
-            <script src="../assetsAdmin/plugins/ladda/ladda.min.js"></script>
-            <script src="../assetsAdmin/plugins/jquery-mask-input/jquery.mask.min.js"></script>
-            <script src="../assetsAdmin/plugins/select2/js/select2.min.js"></script>
-            <script src="../assetsAdmin/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
-            <script src="../assetsAdmin/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
-            <script src="../assetsAdmin/plugins/daterangepicker/moment.min.js"></script>
-            <script src="../assetsAdmin/plugins/daterangepicker/daterangepicker.js"></script>
-            <script src="../assetsAdmin/plugins/jekyll-search.min.js"></script>
-            <script src="../assetsAdmin/js/sleek.js"></script>
-            <script src="../assetsAdmin/js/chart.js"></script>
-            <script src="../assetsAdmin/js/date-range.js"></script>
-            <script src="../assetsAdmin/js/map.js"></script>
-            <script src="../assetsAdmin/js/custom.js"></script>
+            <script src="assetsAdmin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assetsAdmin/plugins/toaster/toastr.min.js"></script>
+            <script src="assetsAdmin/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
+            <script src="assetsAdmin/plugins/charts/Chart.min.js"></script>
+            <script src="assetsAdmin/plugins/ladda/spin.min.js"></script>
+            <script src="assetsAdmin/plugins/ladda/ladda.min.js"></script>
+            <script src="assetsAdmin/plugins/jquery-mask-input/jquery.mask.min.js"></script>
+            <script src="assetsAdmin/plugins/select2/js/select2.min.js"></script>
+            <script src="assetsAdmin/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+            <script src="assetsAdmin/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
+            <script src="assetsAdmin/plugins/daterangepicker/moment.min.js"></script>
+            <script src="assetsAdmin/plugins/daterangepicker/daterangepicker.js"></script>
+            <script src="assetsAdmin/plugins/jekyll-search.min.js"></script>
+            <script src="assetsAdmin/js/sleek.js"></script>
+            <script src="assetsAdmin/js/chart.js"></script>
+            <script src="assetsAdmin/js/date-range.js"></script>
+            <script src="assetsAdmin/js/map.js"></script>
+            <script src="assetsAdmin/js/custom.js"></script>
 
 
 
             <!-- SLEEK CSS -->
-            <link id="sleek-css" rel="stylesheet" href="../assetsAdmin/css/sleek.css" />
+            <link id="sleek-css" rel="stylesheet" href="assetsAdmin/css/sleek.css" />
             <!-- FAVICON -->
-            <link href="../assetsAdmin/img/favicon.png" rel="shortcut icon" />
-            <script src="../assetsAdmin/plugins/nprogress/nprogress.js"></script>
+            <link href="assetsAdmin/img/favicon.png" rel="shortcut icon" />
+            <script src="assetsAdmin/plugins/nprogress/nprogress.js"></script>
         </head>
 
 
@@ -97,6 +97,11 @@ if ($_SESSION['role'] != 'admin') {
 
         <div class="wrapper">
 
+            <!--
+          ====================================
+          ——— LEFT SIDEBAR WITH FOOTER
+          =====================================
+        -->
             <aside class="left-sidebar bg-sidebar">
                 <div id="sidebar" class="sidebar sidebar-with-footer">
                     <!-- Aplication Brand -->
@@ -145,24 +150,24 @@ if ($_SESSION['role'] != 'admin') {
                                 <ul class="collapse" id="Services" data-parent="#sidebar-menu">
                                     <div class="sub-menu">
                                         <li>
-                                            <a class="sidenav-item-link" href="afficher.php">
+                                            <a class="sidenav-item-link" href="services/afficher.php">
                                                 <span class="nav-text">Afficher services</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="sidenav-item-link" href="add.php">
+                                            <a class="sidenav-item-link" href="services/add.php">
                                                 <span class="nav-text">Ajouter services</span>
                                             </a>
                                         </li>
 
                                         <li>
-                                            <a class="sidenav-item-link" href="modify.php">
+                                            <a class="sidenav-item-link" href="services/modify.php">
                                                 <span class="nav-text">Modifier services</span>
                                             </a>
                                         </li>
 
                                         <li>
-                                            <a class="sidenav-item-link" href="delete.php">
+                                            <a class="sidenav-item-link" href="services/delete.php">
                                                 <span class="nav-text">Supprimer services</span>
                                             </a>
                                         </li>
@@ -178,7 +183,7 @@ if ($_SESSION['role'] != 'admin') {
                                 <ul class="collapse" id="Reserva" data-parent="#sidebar-menu">
                                     <div class="sub-menu">
                                         <li>
-                                            <a class="sidenav-item-link" href="../Reservation.php">
+                                            <a class="sidenav-item-link" href="Reservation.php">
                                                 <span class="nav-text">Afficher Reservations</span>
                                             </a>
                                         </li>
@@ -659,13 +664,13 @@ if ($_SESSION['role'] != 'admin') {
                                 <!-- User Account -->
                                 <li class="dropdown user-menu">
                                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                        <img src="../assetsAdmin/img/user/user.png" class="user-image" alt="User Image" />
+                                        <img src="assetsAdmin/img/user/user.png" class="user-image" alt="User Image" />
                                         <span class="d-none d-lg-inline-block"><?php if (isset($_SESSION['name'])) echo $_SESSION['name']; ?></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <!-- User image -->
                                         <li class="dropdown-header">
-                                            <img src="../assetsAdmin/img/user/user.png" class="img-circle" alt="User Image" />
+                                            <img src="assetsAdmin/img/user/user.png" class="img-circle" alt="User Image" />
                                             <div class="d-inline-block">
                                                 <?php if (isset($_SESSION['name'])) echo $_SESSION['name']; ?><small class="pt-1"><?php if (isset($_SESSION['email'])) echo $_SESSION['email']; ?></small>
                                             </div>
@@ -704,7 +709,7 @@ if ($_SESSION['role'] != 'admin') {
                 <div class="content-wrapper">
                     <div class="content">
                         <div class="breadcrumb-wrapper">
-                            <h1>Services</h1>
+                            <h1>Reservations</h1>
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb p-0">
@@ -713,7 +718,10 @@ if ($_SESSION['role'] != 'admin') {
                                             <span class="mdi mdi-home"></span>
                                         </a>
                                     </li>
-                                    <li class="breadcrumb-item" aria-current="page">Afficher Services</li>
+                                    <li class="breadcrumb-item">
+                                        Gerer Reservations
+                                    </li>
+                                    <li class="breadcrumb-item" aria-current="page">Afficher Reservations</li>
                                 </ol>
                             </nav>
 
@@ -722,80 +730,85 @@ if ($_SESSION['role'] != 'admin') {
 
                         <!-- Recent Order Table -->
                         <?php
-                        include "../../core/serviceC.php";
-
-                        $service1C = new serviceC();
-                        $listeservices = $service1C->afficherservices();
+                        include "../core/reservationC.php";
+                        $reservation1C = new reservationC();
+                        $listeReservations = $reservation1C->afficherReservation();
 
                         ?>
+
+
                         <div class="card card-table-border-none" id="promotion">
                             <div class="card-header justify-content-between">
+                                <h2>Reservation</h2>
                                 <div class="date-range-report ">
-                                    <span>
-                                        <h1>Services</h1>
-                                    </span>
+                                    <span></span>
                                 </div>
                             </div>
-                            <div class="card-body pt-0 pb-5">
-                                <table id="myTable" class="table card-table table-responsive table-responsive-large table-hover table-sm" style="width:100%">
-                                    <thead align="center">
-                                        <tr>
-                                            <th align="center">Service ID</th>
-                                            <th align="center">Name of service</th>
-                                            <th align="center">Image of service</th>
+                            <div class="table-wrapper-scroll-y my-custom-scrollbar">
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        if (is_array($listeservices) || is_object($listeservices)) {
-                                            foreach ($listeservices as $row) {
-                                                ?>
-                                                <tr>
-                                                    <td align="center"><?PHP echo $row['id']; ?></td>
-                                                    <td align="center"><?PHP echo $row['name']; ?></td>
-                                                    <td align="center"><img src="images/<?PHP echo $row['image']; ?>" alt=""></td>
-                                                </tr>
-                                        <?php }
-                                        } ?>
-                                    </tbody>
-                                </table>
-                                <style>
-                                    .my-custom-scrollbar {
-                                        position: relative;
-                                        height: 500px;
-                                        overflow: auto;
-                                    }
+                                <div class="card-body pt-0 pb-5">
+                                    <form class="sa-innate-form" method="post" id="form2" action="signup.php">
+                                        <label style="color: aliceblue;">Name</label>
+                                        <input type="text" name="name">
+                                        <label style="color: aliceblue;">Email Address</label>
+                                        <input type="text" name="email">
+                                        <label style="color: aliceblue;">Password</label>
+                                        <input type="password" name="password">
 
-                                    .table-wrapper-scroll-y {
-                                        display: block;
-                                    }
+                                        <div class="g-recaptcha" data-sitekey="6LcG08YUAAAAAFA19FKFPMLftz8F86NZN3AVkenQ"></div>
+
+                                        <button type="button" onclick="tsign();">Join now</button>
+                                        <p style="color: aliceblue;">By clicking Join now, you agree to Workup's User Agreement, Privacy Policy, and Cookie Policy.</p>
+                                    </form>
+                                    <style>
+                                        .my-custom-scrollbar {
+                                            position: relative;
+                                            height: 500px;
+                                            overflow: auto;
+                                        }
+
+                                        .table-wrapper-scroll-y {
+                                            display: block;
+                                        }
 
 
-                                    #myTable.dataTable thead .sorting:after,
-                                    #myTable.dataTable thead .sorting:before,
-                                    #myTable.dataTable thead .sorting_asc:after,
-                                    #myTable.dataTable thead .sorting_asc:before,
-                                    #myTable.dataTable thead .sorting_asc_disabled:after,
-                                    #myTable.dataTable thead .sorting_asc_disabled:before,
-                                    #myTable.dataTable thead .sorting_desc:after,
-                                    #myTable.dataTable thead .sorting_desc:before,
-                                    #myTable.dataTable thead .sorting_desc_disabled:after,
-                                    #myTable.dataTable thead .sorting_desc_disabled:before {
-                                        bottom: .5em;
-                                    }
-                                </style>
+                                        #myTable.dataTable thead .sorting:after,
+                                        #myTable.dataTable thead .sorting:before,
+                                        #myTable.dataTable thead .sorting_asc:after,
+                                        #myTable.dataTable thead .sorting_asc:before,
+                                        #myTable.dataTable thead .sorting_asc_disabled:after,
+                                        #myTable.dataTable thead .sorting_asc_disabled:before,
+                                        #myTable.dataTable thead .sorting_desc:after,
+                                        #myTable.dataTable thead .sorting_desc:before,
+                                        #myTable.dataTable thead .sorting_desc_disabled:after,
+                                        #myTable.dataTable thead .sorting_desc_disabled:before {
+                                            bottom: .5em;
+                                        }
+                                    </style>
 
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <footer class="footer mt-auto">
+            <div class="copyright bg-white">
+
+            </div>
+        </footer>
+
         </div>
         </div>
-        </div>
+
+
+
+
+
+
     </body>
     <script>
         $(document).ready(function() {

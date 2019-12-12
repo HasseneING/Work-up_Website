@@ -1,3 +1,4 @@
+<?php session_start();?>
 <html>
 
 <head>
@@ -29,7 +30,8 @@
       for ($i = 0; $i < 8; $i++) {
         $recup_code .= mt_rand(0, 9);
       }
-
+      $_SESSION['code']=$recup_code;
+      $_SESSION['rec']=$recup_email;
       $pseudo = $user1C->findName($recup_email);
 
       if ($recover1C->emailExists($recup_email) == $recup_email) {
@@ -60,14 +62,16 @@
           'allow_self_signed' => true
         )
       );
-      if ($mail->send()) {
-        ?>
-        <form action="aftermail.php">
-          <input type="hidden" name="email" value="<?php echo $recup_email ?>">
-          <input type="hidden" name="code" value="<?php echo $recup_code ?>">
+      if (!$mail->send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+      } else {
+       ?>
+        <form id="fourma" action="aftermail.php">
+          <input type="hidden" name="email" value="<?php $recup_email ?>">
+          <input type="hidden" name="code" value="<?php $recup_code ?>">
+          <input type="submit" value="confirm">
         </form>
   <?php
-        header('Location : afteremail.php');
       }
     } else {
       echo ('<script>swal("OUPS !", "Email doesn t exist !", "error", {

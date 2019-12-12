@@ -23,7 +23,8 @@
 
 
     <?php
-    $email = $_POST['email'];
+    session_start();
+    $email = $_SESSION['rec'];
     ?>
 
     <div class="container">
@@ -50,7 +51,6 @@
                                     <input type="text" name="insert1" placeholder="confirm the passwrod">
                                     <input type="hidden" name="email" value="<?php echo $email; ?>">
                                     <button type="submit">Enter</button>
-                                    <a href="rec.php">send again !</a>
                                 </form>
                             </div>
                             <div class="clearfix"></div>

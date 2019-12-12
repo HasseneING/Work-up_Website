@@ -20,13 +20,10 @@
 
 <body style="background: #FFCC33;">
 
-    <script>
-        Javascript: alert('Email sent !');
-    </script>
-
     <?php
-        $email = $_POST{'email'};
-        $code = $_POST{'code'};
+    session_start();
+    $email = $_SESSION['rec'];
+    $code = $_SESSION['code'];
     ?>
 
     <div class="container">
@@ -46,13 +43,16 @@
                     <div class="tab-content">
                         <div id="sectionA" class="tab-pane fade in active">
                             <div class="innter-form">
-                                <form class="sa-innate-form" method="POST">
+                                <form class="sa-innate-form" method="POST" action="test.php">
                                     <label style="color: aliceblue;">Enter the code</label>
-                                    <input type="text" name="insert" placeholder="code">
-                                    <button type="submit">Enter</button>
+                                    <input type="text" name="code" placeholder="code">
                                     <input type="hidden" name="email" value="<?php echo $email ?>">
-                                    <a href="rec.php">send again !</a>
+                                    <button type="submit">Enter</button>
                                 </form>
+
+                                <script>
+                                    Javascript: alert('Email sent !');
+                                </script>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -63,20 +63,4 @@
     </div>
 </body>
 
-
 </html>
-<?php
-
-if($_POST['insert'] == $code)
-{
-    header('location: newcode.php');
-}
-else{
-    echo ('<script>swal("OUPS !", "Wrong code", "error", {
-        buttons: false,
-        timer: 1729
-    }); </script>');
-header("refresh:1.7;url=aftermail.php");
-}
-
-?>
