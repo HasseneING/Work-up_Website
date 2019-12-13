@@ -124,7 +124,7 @@
                         <li><a href="#service">Service</a></li>
                         <li><a href="#events">Events</a></li>
                         <li><a href="#portfolio">Visit</a></li>
-                        <li><a href="#test">Testimonial</a></li>
+                        <li><a href="promoclient.php">Promotion</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="login.php">Login/Sign up</a></li>
                     </ul>

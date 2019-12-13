@@ -82,7 +82,7 @@ if ($_SESSION['role'] != 'admin')
                 <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
               </g>
             </svg>
-            <span class="brand-name">Sleek Dashboard</span>
+            <span class="brand-name">Workup</span>
           </a>
         </div>
         <!-- begin sidebar scrollbar -->
@@ -117,6 +117,11 @@ if ($_SESSION['role'] != 'admin')
               </a>
               <ul class="collapse" id="Services" data-parent="#sidebar-menu">
                 <div class="sub-menu">
+                <li>
+        <a class="sidenav-item-link" href="services/afficher.php">
+          <span class="nav-text">Afficher services</span>
+        </a>
+      </li>
                   <li>
                     <a class="sidenav-item-link" href="services/add.php">
                       <span class="nav-text">Ajouter services</span>

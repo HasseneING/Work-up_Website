@@ -36,6 +36,17 @@
     <script src="jquery.datetimepicker.full.js"></script>
 
 
+    <link rel="canonical" href="https://www.creative-tim.com/product/hipster-as-f-cards"/>
+
+    <!-- Stylesheet      -->
+    <link href="CardAssets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="CardAssets/css/hipster_cards.css" rel="stylesheet"/>
+   
+
+    <!--     Fonts and icons     -->
+    <link href="CardAssets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
 
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -235,7 +246,6 @@
                                     <th>Numero Telephone</th>
                                     <th>Notes</th>
                                     <th>Status</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -383,7 +393,6 @@
 
         <!--Business Section-->
         <?php
-        include "../core/serviceC.php";
 
         $service1C = new serviceC();
         $list = $service1C->afficherservices();
