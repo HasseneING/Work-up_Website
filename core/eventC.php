@@ -68,8 +68,8 @@ class eventC
         
  
 
-        $sql = "INSERT into events(id,date_deb,date_fin,nom_event,descri) 
-                values (:id,:date_deb,:date_fin,:nom_event,:descri)";
+        $sql = "INSERT into events(id,date_deb,date_fin,nom_event,descri,image,link) 
+                values (:id,:date_deb,:date_fin,:nom_event,:descri,:image,:link)";
 
         $db = config::getConnection();
 
@@ -82,13 +82,16 @@ class eventC
         $date_fin=$event->getdate_fin();
         $nom_event=$event->getnom_event();
         $descri=$event->getdescription();
+        $image=$event->getimage();
+        $link=$event->getlink();
     
         $req->bindValue(':id',$id);
         $req->bindValue(':date_deb',$date_deb);
         $req->bindValue(':date_fin',$date_fin);
         $req->bindValue(':nom_event',$nom_event);
         $req->bindValue(':descri',$descri);
-        
+        $req->bindValue(':image',$image);
+        $req->bindValue(':link',$link);
         
         $req->execute();
     

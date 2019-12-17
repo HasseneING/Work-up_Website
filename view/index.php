@@ -18,8 +18,6 @@
     <link rel="canonical" href="https://www.creative-tim.com/product/hipster-as-f-cards"/>
 
     <!-- Stylesheet      -->
-    <link href="CardAssets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="CardAssets/css/hipster_cards.css" rel="stylesheet"/>
    
 
     <!--     Fonts and icons     -->
@@ -124,7 +122,7 @@
                         <li><a href="#service">Service</a></li>
                         <li><a href="#events">Events</a></li>
                         <li><a href="#portfolio">Visit</a></li>
-                        <li><a href="promoclient.php">Promotion</a></li>
+                        <li><a href="#test">Testimonial</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="login.php">Login/Sign up</a></li>
                     </ul>
@@ -327,48 +325,50 @@
 
           ?>
         <section id="events" >
-            
-                     
-                     
-                     
-                     
-                     
-                     
-                     
-                     
-                     
-                     
-                     <?php 
-                        if (is_array($liste) || is_object($liste)) {
-                            foreach ($liste as $row) { ?>
-                                                   
-                                                                                
-                                                   <div class="card-box col-md-4 col-sm-6">
-                <div class="card" style="background-color:#FFCC33;">
-                    <div class="header">
-                        <img src="assets/img/lifestyle-8.jpg"/>
-                        <div class="filter"></div>
+        
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                <?php 
+           if (is_array($liste) || is_object($liste)) {
+               foreach ($liste as $row) { ?>
+                                      
+                                                               
+                                      <div class="card-box col-md-4 col-sm-6">
+   <div class="card" style="background-color:#FFCC33;">
+       <div class="header">
+       <img src="eventimage/<?PHP echo $row['image']; ?>" alt="">
+           <div class="filter">
+           </div>
 
-                        <div class="actions">
-                            <button class="btn btn-round btn-fill btn-neutral btn-modern">Click here</button>
-                        </div>
-                    </div>
-
-                    <div class="content">
-                        <h6 class="category" >Events</h6>
-                        <h4 class="title"><a href="#"><?PHP echo $row['nom_event']; ?> </a></h4>
-                        <p class="description" style="color:#003366;"><?PHP echo $row['descri']; ?></p>
-                    </div>
-                </div> <!-- end card -->
+           <div class="actions"style="padding-left:110px;">
+                <button class="btn btn-round btn-fill btn-neutral btn-modern" >Click here</button>
              </div>
-                                                        
-                                                        
-                        
-                                                  
-                                                    <?php } 
-                    } 
-                    ?>
-                                                
+       </div>
+
+       <div class="content"
+       style="padding-left:15px ;">
+           <h6 class="category" style="font-family:'Raleway',sans-serif;">Events</h6>
+           <h4 class="title"  style="font-family:'Raleway',sans-serif;"><a href="#"><?PHP echo $row['nom_event']; ?> </a></h4>
+           <p class="description" style="color:#003366; style='Raleway',sans-serif;"><?PHP echo $row['descri']; ?></p>
+       </div>
+   </div> <!-- end card -->
+</div>
+                                           
+                                           
+           
+                                     
+                                       <?php } 
+       } 
+       ?>
+                                   
+                                 
                         
 
                        

@@ -5,14 +5,20 @@ class event{
     private $date_fin ;
     private $nom_event ;
     private $descri ;
+    private $image;
+    private $link;
 
-    function __construct($id,$date_deb,$date_fin,$nom_event,$descri)
+    function __construct($id,$date_deb,$date_fin,$nom_event,$descri,$image,$link)
     {
     $this->id=$id;
     $this->date_deb=$date_deb;
     $this->date_fin=$date_fin;
     $this->nom_event=$nom_event;
     $this->descri=$descri;
+    $this->image=$image;
+    $this->link=$link;
+
+
     }
     function getid(){
         return $this->id;
@@ -29,7 +35,12 @@ class event{
     function getdescription(){
         return $this->descri;
     }
-
+    function getimage(){
+        return $this->image;
+    }
+    function getlink(){
+        return $this->link;
+    }
 
     function setid($id){
         $this->id=$id;
@@ -47,6 +58,14 @@ class event{
 function setdecription($descri){
 
     $this->descri=$descri;
+}
+function setimage($image){
+
+    $this->image=$image;
+}
+function setlink($link){
+
+    $this->link=$link;
 }
 }
 
