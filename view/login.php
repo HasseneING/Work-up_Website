@@ -49,7 +49,7 @@
                                     <input type="text" name="email">
                                     <label style="color: aliceblue;">Password</label>
                                     <input type="password" name="password">
-                                    <button type="button" onclick="tlog();">Sign In</button>
+                                    <button type="button" onsubmit="tlog();">Sign In</button>
                                     <a href="recovery/recuperer.html">Forgot Password?</a>
                                 </form>
                             </div>
@@ -67,7 +67,7 @@
 
                                     <div class="g-recaptcha" data-sitekey="6LcG08YUAAAAAFA19FKFPMLftz8F86NZN3AVkenQ"></div>
 
-                                    <button type="button" onclick="tsign();" >Join now</button>
+                                    <button type="button" onsubmit="tsign();" >Join now</button>
                                     <p style="color: aliceblue;">By clicking Join now, you agree to Workup's User Agreement, Privacy Policy, and Cookie Policy.</p>
                                 </form>
                             </div>
