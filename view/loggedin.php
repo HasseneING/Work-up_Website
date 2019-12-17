@@ -228,17 +228,13 @@
                 include "../core/reservationC.php";
                 $reservation1C = new reservationC();
                 $listeReservations = $reservation1C->afficherReservationID($_SESSION['id']);
-
                 ?>
-                <div style="background:white; padding-top:50px;" class="card card-table-border-none" id="promotion">
+
+                <div style="background:white;padding-top:50px; width=75%;" id="promotion">
                     <div class="card-header justify-content-between">
-                        <h2 style="padding-top:50px;margin-left: 344px;">Reservations</h2>
-                        <div class="date-range-report ">
-                            <span></span>
-                        </div>
-                    </div>
+                        <h2 style="padding-top:50px;">Reservations</h2>                  
                     <div class="card-body pt-0 pb-5">
-                        <table class="table card-table table-responsive table-responsive-large" style="width:50%;margin-left: 344px;">
+                        <table class="table card-table table-responsive table-responsive-large">
                             <thead>
                                 <tr>
                                     <th class="d-none d-md-table-cell">date Reservation</th>
@@ -264,11 +260,11 @@
                                 <?php }
                                 } ?>
 
-
-
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    </div>
                     </div>
         </section>
 
